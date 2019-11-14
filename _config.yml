@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
+title: 摸着石头过河
+subtitle: 记录和分享生活中的快乐和成长！
+description: 聊聊软件测试，分享学习的新知识，充实自己的生活！
 keywords:
-author: John Doe
-language: en
+author: xingyichuan
+language: zh-CN
 timezone: ''
 
 # URL
@@ -44,9 +44,9 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: true
+  enable: false
   line_number: true
-  auto_detect: false
+  auto_detect: true
   tab_replace: ''
 
 # Home page setting
@@ -90,10 +90,22 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: obsidian
+
+# Social
+social:
+  github: https://github.com/xingyichuan
+  segmentfault: https://segmentfault.com/u/y1chuan
+  
+search:
+  path: search.xml
+  field: post
+  content: true
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: ''
+  type: git
+  repository: https://github.com/xingyichuan/xingyichuan.github.io.git
+  branch: master
   
