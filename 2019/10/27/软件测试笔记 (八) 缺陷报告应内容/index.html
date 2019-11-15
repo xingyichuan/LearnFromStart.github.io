@@ -1,0 +1,443 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>软件测试笔记（八）缺陷报告应该涵盖哪些内容 - 摸着石头过河</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Test Automation Autodesk Inventor API iLogic Forge,"> 
+    <meta name="description" content="聊聊软件测试，分享学习的新知识，充实自己的生活！,前言测试的工作的很重要的一个部分就是报告缺陷，并伴随着测试的进行不断地更新。因为缺陷报告是给开发，项目负责人，等相关人员看的，所以需要把尽可能的信息涵盖在缺陷报告中去，比如环境的详细信息，测试的重现,"> 
+    <meta name="author" content="xingyichuan"> 
+    <link rel="alternative" href="atom.xml" title="摸着石头过河" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+    <link rel="stylesheet" href="/css/obsidian.css">
+    <link rel="stylesheet" href="/css/ball-atom.min.css">
+</head>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">摸着石头过河</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="https://xingyichuan.github.io">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">软件测试笔记（八）缺陷报告应该涵盖哪些内容</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" target="_blank" rel="noopener" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg);">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="javascript:;" target="_blank" rel="noopener"><b>「 </b>文章<b> 」</b></a>
+                
+                十月 27, 2019
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/10/27/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0%20(%E5%85%AB)%20%E7%BC%BA%E9%99%B7%E6%8A%A5%E5%91%8A%E5%BA%94%E5%86%85%E5%AE%B9/" title="软件测试笔记（八）缺陷报告应该涵盖哪些内容" class="">软件测试笔记（八）缺陷报告应该涵盖哪些内容</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>文章字数</i>
+                    3.8k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
+                    3 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>阅读次数</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%B5%8B%E8%AF%95%E7%90%86%E8%AE%BA/" rel="tag">测试理论</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>测试的工作的很重要的一个部分就是报告缺陷，并伴随着测试的进行不断地更新。因为缺陷报告是给开发，项目负责人，等相关人员看的，所以需要把尽可能的信息涵盖在缺陷报告中去，比如环境的详细信息，测试的重现步骤，等，帮助相关人员可以快速的重现描述的缺陷。</p>
+<h2 id="缺陷报告模板"><a href="#缺陷报告模板" class="headerlink" title="缺陷报告模板"></a>缺陷报告模板</h2><p>下面会给大家介绍一下，常用的缺陷报告的模板，希望可以帮助大家写出一个好的缺陷报告。</p>
+<h4 id="缺陷ID："><a href="#缺陷ID：" class="headerlink" title="缺陷ID："></a>缺陷ID：</h4><p>按照项目约定的命名添加缺陷ID。缺陷管理工具会自动生成缺陷标识。通常会包括项目名称的简写，例如INVGEN-0001。</p>
+<h4 id="标题："><a href="#标题：" class="headerlink" title="标题："></a>标题：</h4><p>标题应该简短。它应该包含与实际问题相关的具体术语。写标题时要具体，尽量描述清楚需要阐述的缺陷。<br>例如：假设您在上载具有特定文件格式（即jpeg文件）的个人资料图片时，在注册页中发现了一个错误。那标题可以写“上载JPEG文件时系统崩溃”。不太好的例子是“系统崩溃”。</p>
+<h4 id="缺陷提交者："><a href="#缺陷提交者：" class="headerlink" title="缺陷提交者："></a>缺陷提交者：</h4><p>发现缺陷的人的姓名（通常是测试人员的姓名，但有时可能是开发人员、业务分析师、主题专家（SME）、客户）。这样便于后期确认缺陷时，方便找到缺陷的提交者。</p>
+<h4 id="缺陷报告日期："><a href="#缺陷报告日期：" class="headerlink" title="缺陷报告日期："></a>缺陷报告日期：</h4><p>注明发现缺陷的日期。</p>
+<h4 id="发现者类型："><a href="#发现者类型：" class="headerlink" title="发现者类型："></a>发现者类型：</h4><p>指定发现缺陷者的所属角色。例如：质量保证、开发人员、业务分析师、中小企业、客户。通常对于客户的问题，项目会比较重视。</p>
+<h4 id="项目名称："><a href="#项目名称：" class="headerlink" title="项目名称："></a>项目名称：</h4><p>有时，测试人员可能同时处理多个项目。因此，正确选择项目名称，会有助于快速定位出问题的项目。（如果是产品，请指定产品名称）。</p>
+<h4 id="发布版本："><a href="#发布版本：" class="headerlink" title="发布版本："></a>发布版本：</h4><p>发布/生成版本：发生此问题的发布版本。清楚地提到构建版本的详细信息。这样有助于开发迅速切换到对饮的版本进行重现和调试。</p>
+<h4 id="缺陷类型："><a href="#缺陷类型：" class="headerlink" title="缺陷类型："></a>缺陷类型：</h4><p>缺陷/增强：如果系统未按预期运行，则需要将其指定为缺陷。如果只是对新功能的请求，则必须将其指定为增强功能。</p>
+<h4 id="环境："><a href="#环境：" class="headerlink" title="环境："></a>环境：</h4><p>必须说明操作系统的详细信息、浏览器的详细信息以及与遇到错误的测试环境相关的任何其他信息。<br>例子:Window 10的Microsoft Edge 44.18362.387.0</p>
+<h4 id="优先等级："><a href="#优先等级：" class="headerlink" title="优先等级："></a>优先等级：</h4><p>优先等级定义修复错误的时间。通常，bug的优先级由管理者设置。根据优先级，开发人员可以了解修复的时间，并设置错误的解决顺序。通常分为高，中等，低。</p>
+<h4 id="严重等级："><a href="#严重等级：" class="headerlink" title="严重等级："></a>严重等级：</h4><p>严重等级是指错误对客户业务的影响。通常，错误的严重性由管理者设置。有时，测试人员会选择bug的严重性，但在大多数情况下，它将由经理/主管选择。<br>通常分为：阻滞，非常重要，重要的，一般的，不严重的。</p>
+<h4 id="状态："><a href="#状态：" class="headerlink" title="状态："></a>状态：</h4><p>指定错误的状态。如果你刚刚发现了一个bug并准备发布它，那么状态将是“new”。在bug修复过程中，bug的状态将改变。<br>例如，新的/分配的/打开的/已修复的/测试的/验证的/关闭的/重新打开的/重现的/延迟的/拒绝的/无法修复的/不可重现的/需要更多信息，等。</p>
+<h4 id="描述："><a href="#描述：" class="headerlink" title="描述："></a>描述：</h4><p>在“描述”部分中，必须简要说明在面对错误之前所做的工作。</p>
+<h4 id="重现步骤："><a href="#重现步骤：" class="headerlink" title="重现步骤："></a>重现步骤：</h4><p>描述如何一步一步地重现缺陷。方便重现的步骤为开发人员提供了在不出现任何干扰项的情况下解决缺陷。这些步骤应该能够很好地描述缺陷，并允许开发人员理解缺陷并对其进行操作，而无需与报告缺陷的人进行讨论。可以从“打开应用程序”开始，如果有“先决条件”，则包括“先决条件”，并一直写到“导致错误”的步骤。</p>
+<p>好的案例：</p>
+<ol>
+<li>打开网址“你的网址”</li>
+<li>点击“注册页面”</li>
+<li>在个人资料照片栏上传“jpeg”文件</li>
+</ol>
+<p>坏的案例：</p>
+<ol>
+<li>在注册页上载文件。</li>
+</ol>
+<h4 id="预期结果："><a href="#预期结果：" class="headerlink" title="预期结果："></a>预期结果：</h4><p>当您执行导致失败的操作时，应用程序的预期输出是什么。<br>好的案例：消息应显示“成功上载个人资料图片”<br>不好的案例：系统应接受配置文件图片。</p>
+<h4 id="实际结果："><a href="#实际结果：" class="headerlink" title="实际结果："></a>实际结果：</h4><p>当您执行导致失败的操作时，应用程序的预期输出是什么。<br>好的案例：“在注册页面上传jpeg文件（个人资料图片）会导致系统崩溃”。<br>不好的案例：系统不接受配置文件图片。</p>
+<h4 id="附件："><a href="#附件：" class="headerlink" title="附件："></a>附件：</h4><p>附上当你面对错误时捕捉到的截图或者视频。它帮助开发人员看到您所面临的缺陷。</p>
+<h4 id="缺陷关闭日期："><a href="#缺陷关闭日期：" class="headerlink" title="缺陷关闭日期："></a>缺陷关闭日期：</h4><p>“缺陷关闭日期”是在确保缺陷不可重现缺陷后需要更新的日期。</p>
+<h4 id="缺陷关闭版本："><a href="#缺陷关闭版本：" class="headerlink" title="缺陷关闭版本："></a>缺陷关闭版本：</h4><p>“缺陷关闭版本”是在确保缺陷不可重现缺陷后需要更新的对应的应用程序的版本。</p>
+<h4 id="自动化脚本测试："><a href="#自动化脚本测试：" class="headerlink" title="自动化脚本测试："></a>自动化脚本测试：</h4><p>如果缺陷已经添加了相应的自动化案例，通常需要关联自动化对应的测试用例。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>好的缺陷报告会方便开发或者相关人员重现对应的缺陷，帮助我们快速定位缺陷并且解决缺陷，同时提高整个项目的开发效率。作为一个合格的测试人员，必须将编写测试报告作为一个需要锻炼的技能。</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="true">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/bgm.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d=''
+    >留言</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="/img/avatar.png" height=300 width=300></img>
+                    <p>xingyichuan</p>
+                    <span>记录和分享生活中的快乐和成长！</span>
+                    <dl>
+                        <dd><a href="https://xingyichuan.github.io/" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">20 <p>文章</p></a></li>
+                    <li><a href="/categories">2 <p>分类</p></a></li>
+                    <li><a href="/tags">3 <p>标签</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>目录</h4>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缺陷报告模板"><span class="toc-number">2.</span> <span class="toc-text">缺陷报告模板</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2019
+        <span class="gradient-text">
+            xingyichuan
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.3" target="_blank" rel="noopener">v1.4.3</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+    <script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+
+
+
+    <script src="/js/busuanzi.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            if ($('span[id^="busuanzi_"]').length) {
+                initialBusuanzi();
+            }
+        });
+    </script>
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="//www.googletagmanager.com/gtag/js?id=xxxx"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'xxxx');
+    </script>
+
+
+
+
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["记录和分享生活中的快乐和成长！", "聊聊软件测试，分享学习的新知识，充实自己的生活！"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
+
+
+
+
+</html>

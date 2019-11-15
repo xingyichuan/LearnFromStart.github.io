@@ -1,0 +1,454 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>软件测试笔记（六）软件测试计划 - 摸着石头过河</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Test Automation Autodesk Inventor API iLogic Forge,"> 
+    <meta name="description" content="聊聊软件测试，分享学习的新知识，充实自己的生活！,软件测试计划产品的开发需要文档，软件测试同样需要这样的文档。它包含了测试活动的内容，确保客户的需求被高质量的实现和交付。测试文档的定义则是从产品的定义，项目的相关文档，客户的需求文档中派生出来的。
+,"> 
+    <meta name="author" content="xingyichuan"> 
+    <link rel="alternative" href="atom.xml" title="摸着石头过河" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+    <link rel="stylesheet" href="/css/obsidian.css">
+    <link rel="stylesheet" href="/css/ball-atom.min.css">
+</head>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">摸着石头过河</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="https://xingyichuan.github.io">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">软件测试笔记（六）软件测试计划</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" target="_blank" rel="noopener" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg);">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="javascript:;" target="_blank" rel="noopener"><b>「 </b>文章<b> 」</b></a>
+                
+                十月 25, 2019
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/10/25/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0%20(%E5%85%AD)%20%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E8%AE%A1%E5%88%92/" title="软件测试笔记（六）软件测试计划" class="">软件测试笔记（六）软件测试计划</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>文章字数</i>
+                    3.8k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
+                    3 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>阅读次数</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%B5%8B%E8%AF%95%E7%90%86%E8%AE%BA/" rel="tag">测试理论</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <h2 id="软件测试计划"><a href="#软件测试计划" class="headerlink" title="软件测试计划"></a>软件测试计划</h2><p>产品的开发需要文档，软件测试同样需要这样的文档。它包含了测试活动的内容，确保客户的需求被高质量的实现和交付。测试文档的定义则是从产品的定义，项目的相关文档，客户的需求文档中派生出来的。</p>
+<p>它通常是测试的经理或者测试负责人来完成，具体内容包括了测试范围，要测试什么，不测试什么，如何实施测试，执行测试，有谁负责某个功能模块，测试需要选择什么样的测试工具，测试框架，配置怎么样的测试环境，测试自动化如何集成到CI/CD中，需要遵循的测试技术准则，会有怎么样的测试风险以及如何去应对这些风险。</p>
+<p>它不是一个静态的文档，通常会随着项目的迭代开发而改变。它指导我们如何去执行测试，这样影响到最终产品的顺利交付。</p>
+<p>同样它也是测试人员需要交付的一个文档，该文档也需要和研发团队，项目负责人一同分享。尽可能让团队成员了解到测试范围，方法，目标以及时间表。</p>
+<h2 id="如何制定有效的测试计划"><a href="#如何制定有效的测试计划" class="headerlink" title="如何制定有效的测试计划"></a>如何制定有效的测试计划</h2><h3 id="谁来准备测试计划"><a href="#谁来准备测试计划" class="headerlink" title="谁来准备测试计划"></a>谁来准备测试计划</h3><p>通常，测试负责人准备测试计划，测试人员参与测试计划文件的编制过程。一旦测试计划准备好了，测试人员就会根据测试计划文档写测试场景和测试用例。</p>
+<h3 id="测试计划的模板"><a href="#测试计划的模板" class="headerlink" title="测试计划的模板"></a>测试计划的模板</h3><p>下面列举的每个方面都是符合标准IEEE 829的。 </p>
+<ol>
+<li>测试计划标识符</li>
+<li>文档列表</li>
+<li>项目介绍</li>
+<li>测试项目列表</li>
+<li>待测试功能</li>
+<li>未测试功能</li>
+<li>实现方法</li>
+<li>合格/不合格标准</li>
+<li>中止标准</li>
+<li>测试可交付成果</li>
+<li>测试任务</li>
+<li>测试环境</li>
+<li>责任</li>
+<li>人员配置和培训需求</li>
+<li>时刻表</li>
+<li>风险和突发情况</li>
+<li>批准</li>
+</ol>
+<h4 id="1-测试计划标识符"><a href="#1-测试计划标识符" class="headerlink" title="1. 测试计划标识符"></a>1. 测试计划标识符</h4><p>测试计划标识符是用于标识测试计划的唯一编号。<br>示例：项目_0001</p>
+<h4 id="2-文档列表"><a href="#2-文档列表" class="headerlink" title="2. 文档列表"></a>2. 文档列表</h4><p>将指定支持当前创建的测试计划的所有文档列表。<br>示例：SRS（系统需求规范）、用例文档、测试策略、项目计划、项目指南等，</p>
+<h4 id="3-项目介绍"><a href="#3-项目介绍" class="headerlink" title="3. 项目介绍"></a>3. 项目介绍</h4><p>介绍或概括包括项目的目的和范围<br>示例：本文档的目标是测试“项目名称”的功能</p>
+<h4 id="4-测试项目列表"><a href="#4-测试项目列表" class="headerlink" title="4. 测试项目列表"></a>4. 测试项目列表</h4><p>将要测试的测试项目列表<br>示例：测试应该在具体什么样的环境下的应用程序前台和后台进行。</p>
+<h4 id="5-待测试的功能"><a href="#5-待测试的功能" class="headerlink" title="5. 待测试的功能"></a>5. 待测试的功能</h4><p>列出将在项目中测试的所有功能。<br>示例：要测试的功能包括登录页、仪表板、报表。</p>
+<h4 id="6-未测试的功能"><a href="#6-未测试的功能" class="headerlink" title="6. 未测试的功能"></a>6. 未测试的功能</h4><p>我们将列出项目中未包含的功能。<br>示例：使用支付宝的支付将从应用程序中删除。无需测试此功能。</p>
+<h4 id="7-实现方法"><a href="#7-实现方法" class="headerlink" title="7. 实现方法"></a>7. 实现方法</h4><p>如何执行测试的总体策略。它包含测试方法、测试类型、测试技术等详细信息。<br>示例：在这个项目中，我们遵循敏捷项目开发测试方法。</p>
+<h4 id="8-合格-不合格标准"><a href="#8-合格-不合格标准" class="headerlink" title="8. 合格/不合格标准"></a>8. 合格/不合格标准</h4><p>指定用于确定测试项通过或失败百分比的标准。<br>示例：应用程序的所有主要功能都应按预期工作，测试用例的通过率应大于98%，自动化测试用例通过率100%，并且不应有任何严重的错误。</p>
+<h4 id="9-暂停标准"><a href="#9-暂停标准" class="headerlink" title="9. 暂停标准"></a>9. 暂停标准</h4><p>将指定何时停止测试。<br>示例：如果任何主要功能不起作用或系统遇到登录问题，则应暂停测试。</p>
+<h4 id="10-测试可交付成果"><a href="#10-测试可交付成果" class="headerlink" title="10. 测试可交付成果"></a>10. 测试可交付成果</h4><p>每个测试阶段需要交付的文档列表，所有测试的相关的文档和结果。<br>示例：测试用例、错误报告</p>
+<h4 id="11-测试任务"><a href="#11-测试任务" class="headerlink" title="11. 测试任务"></a>11. 测试任务</h4><p>将指定在当前项目中需要完成的测试任务列表。<br>示例：测试环境应该在测试执行阶段之前准备好。需要准备测试总结报告。</p>
+<h4 id="12-测试环境"><a href="#12-测试环境" class="headerlink" title="12. 测试环境"></a>12. 测试环境</h4><p>测试环境所需的硬件、软件和任何其他工具的列表。</p>
+<h4 id="13-责任"><a href="#13-责任" class="headerlink" title="13. 责任"></a>13. 责任</h4><p>指定了每个测试任务的角色和职责列表。</p>
+<h4 id="14-人员配置和培训需求"><a href="#14-人员配置和培训需求" class="headerlink" title="14. 人员配置和培训需求"></a>14. 人员配置和培训需求</h4><p>计划培训课程，以提高项目人员的技能，实现预期目标。</p>
+<h4 id="15-日程安排"><a href="#15-日程安排" class="headerlink" title="15. 日程安排"></a>15. 日程安排</h4><p>完成关于何时开始、何时结束以及每项任务应进行多长时间的详细信息。<br>示例：执行测试执行–180工时，测试报告–20工时</p>
+<h4 id="16-风险和突发情况"><a href="#16-风险和突发情况" class="headerlink" title="16. 风险和突发情况"></a>16. 风险和突发情况</h4><p>说明克服这些风险的风险和意外事件的可能性。<br>示例：风险-如果预算估计错误，则成本可能超支。应急计划-在测试任务开始前确定范围，并在项目规划中持续关注和更新动态，同时持续跟踪预算估计。</p>
+<h4 id="17-批准"><a href="#17-批准" class="headerlink" title="17. 批准"></a>17. 批准</h4><p>谁应该签署并批准测试项目</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>好的测试计划可以让项目人员获得整个项目测试的整个框架和测试目标。不仅可以帮助到测试人员理清项目的测试内容和计划表，任务分配，技术需求，同时可以更具测试计划文档保证项目的测试顺利进行，产品正常交付。</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="true">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/bgm.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d=''
+    >留言</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="/img/avatar.png" height=300 width=300></img>
+                    <p>xingyichuan</p>
+                    <span>记录和分享生活中的快乐和成长！</span>
+                    <dl>
+                        <dd><a href="https://xingyichuan.github.io/" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">20 <p>文章</p></a></li>
+                    <li><a href="/categories">2 <p>分类</p></a></li>
+                    <li><a href="/tags">3 <p>标签</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>目录</h4>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#软件测试计划"><span class="toc-number">1.</span> <span class="toc-text">软件测试计划</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何制定有效的测试计划"><span class="toc-number">2.</span> <span class="toc-text">如何制定有效的测试计划</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#谁来准备测试计划"><span class="toc-number">2.1.</span> <span class="toc-text">谁来准备测试计划</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试计划的模板"><span class="toc-number">2.2.</span> <span class="toc-text">测试计划的模板</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2019
+        <span class="gradient-text">
+            xingyichuan
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.3" target="_blank" rel="noopener">v1.4.3</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+    <script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+
+
+
+    <script src="/js/busuanzi.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            if ($('span[id^="busuanzi_"]').length) {
+                initialBusuanzi();
+            }
+        });
+    </script>
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="//www.googletagmanager.com/gtag/js?id=xxxx"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'xxxx');
+    </script>
+
+
+
+
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["记录和分享生活中的快乐和成长！", "聊聊软件测试，分享学习的新知识，充实自己的生活！"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
+
+
+
+
+</html>

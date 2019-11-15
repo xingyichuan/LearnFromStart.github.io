@@ -1,0 +1,479 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>软件测试笔记（十）单元测试的介绍和工具选择 - 摸着石头过河</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Test Automation Autodesk Inventor API iLogic Forge,"> 
+    <meta name="description" content="聊聊软件测试，分享学习的新知识，充实自己的生活！,前言单元测试通常是作为软件测试中基础的测试类型，用于测试单独的模块是否可以正常工作。它于功能测试不同，它更加关注的是代码内部的逻辑，而非是用户的需求。
+单元测试定义前面粗略了介绍了单元测试的定义，详,"> 
+    <meta name="author" content="xingyichuan"> 
+    <link rel="alternative" href="atom.xml" title="摸着石头过河" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+    <link rel="stylesheet" href="/css/obsidian.css">
+    <link rel="stylesheet" href="/css/ball-atom.min.css">
+</head>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">摸着石头过河</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="https://xingyichuan.github.io">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">软件测试笔记（十）单元测试的介绍和工具选择</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" target="_blank" rel="noopener" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg);">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="javascript:;" target="_blank" rel="noopener"><b>「 </b>文章<b> 」</b></a>
+                
+                十月 29, 2019
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/10/29/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0%20(%E5%8D%81)%20%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%92%8C%E5%B7%A5%E5%85%B7%E9%80%89%E6%8B%A9/" title="软件测试笔记（十）单元测试的介绍和工具选择" class="">软件测试笔记（十）单元测试的介绍和工具选择</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>文章字数</i>
+                    4.9k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
+                    4 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>阅读次数</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%B5%8B%E8%AF%95%E7%90%86%E8%AE%BA/" rel="tag">测试理论</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>单元测试通常是作为软件测试中基础的测试类型，用于测试单独的模块是否可以正常工作。它于功能测试不同，它更加关注的是代码内部的逻辑，而非是用户的需求。</p>
+<h2 id="单元测试定义"><a href="#单元测试定义" class="headerlink" title="单元测试定义"></a>单元测试定义</h2><p>前面粗略了介绍了单元测试的定义，详细的解释是：单元测试也称为模块测试或组件测试。在软件开发过程中，检查软件的单个单元或模块是否正常工作，它是由开发人员在开发人员的环境中完成的。</p>
+<p><img src="/img/bVbzTmq" alt="image.png"></p>
+<p>软件测试通常划分为四个层次，每个层次都会去验证软件产品的功能，质量和性能指标。它们是：单元测试，集成测试，系统测试和验收测试。</p>
+<h2 id="单元测试的目标"><a href="#单元测试的目标" class="headerlink" title="单元测试的目标"></a>单元测试的目标</h2><ul>
+<li>隔离代码的每个部分。</li>
+<li>确保单个模块功能正确。</li>
+<li>在开发周期的早期，发现代码缺陷。</li>
+<li>早期介入，以节省测试成本。</li>
+<li>允许开发人员在以后重构或升级代码。</li>
+</ul>
+<h2 id="单元测试的优势"><a href="#单元测试的优势" class="headerlink" title="单元测试的优势"></a>单元测试的优势</h2><ul>
+<li>它在产品开发周期的早期发现问题。因此它降低了测试成本，早发现一个缺陷的成本要比晚发现它的成本低得多。</li>
+<li>在改变现有功能（回归测试）时，它同时可以保证减少缺陷。</li>
+<li>它简化了调试过程（测试驱动开发就是基于测试用例来完成功能开发）。调试是在程序中发现并解决妨碍软件正确运行的缺陷的过程。当实现单元测试时，发现测试失败时，只需要调试代码中所做的更改，就可以快速定位到错误。</li>
+<li>由于更好的编码标准和实践，它给组织提供了更好的代码文档。</li>
+</ul>
+<h2 id="单元测试的内容"><a href="#单元测试的内容" class="headerlink" title="单元测试的内容"></a>单元测试的内容</h2><h4 id="单元测试的方法"><a href="#单元测试的方法" class="headerlink" title="单元测试的方法"></a>单元测试的方法</h4><p>通常单元测试是使用白盒测试的方法</p>
+<h4 id="单元测试的类型"><a href="#单元测试的类型" class="headerlink" title="单元测试的类型"></a>单元测试的类型</h4><p>单元测试可以是手动测试或者是自动化测试</p>
+<h4 id="什么时候执行单元测试"><a href="#什么时候执行单元测试" class="headerlink" title="什么时候执行单元测试"></a>什么时候执行单元测试</h4><p>它作为测试层次的第一层，通常是在集成测试之前完成。</p>
+<h4 id="单元测试有谁执行"><a href="#单元测试有谁执行" class="headerlink" title="单元测试有谁执行"></a>单元测试有谁执行</h4><p>它需要由对于代码内部逻辑熟悉的人执行，通常是开发或者是白盒测试人员。</p>
+<h4 id="单元测试有哪些具体的任务"><a href="#单元测试有哪些具体的任务" class="headerlink" title="单元测试有哪些具体的任务"></a>单元测试有哪些具体的任务</h4><p>首先需要准备单元测试计划：</p>
+<ul>
+<li>准备测试计划</li>
+<li>回顾测试计划</li>
+<li>修订测试计划</li>
+<li>定义单元测试计划的基准数据</li>
+</ul>
+<p>其次是要准备测试用例和脚本：</p>
+<ul>
+<li>准备测试环境和测试用例和脚本</li>
+<li>回顾测试用例和脚本</li>
+<li>修订测试用例和脚本</li>
+<li>定义单元测试用例和脚本的基准数据</li>
+</ul>
+<p>最后是单元测试的执行。</p>
+<h4 id="单元测试的工具"><a href="#单元测试的工具" class="headerlink" title="单元测试的工具"></a>单元测试的工具</h4><p>市面上有很多单元测试的工具，它们可用于协助单元测试。具体的单元测试的工具的选择还是要根据项目的具体情况决定，比如说项目的具体技术栈，是否可以重用已有的单元测试工具等。我们将提供以下几个示例：</p>
+<p><strong><a href="https://junit.org/junit5/" target="_blank" rel="noopener">Junit</a>:</strong><br>Junit的目标是为JVM开发人员开发一个基础测试的测试框架。这包括关注java 8和更高版本，以及支持多种不同风格的测试。</p>
+<p><strong><a href="https://testng.org/doc/" target="_blank" rel="noopener">TestNG</a>:</strong><br>TestNG是一个受JUnit和NUnit启发的测试框架，但是它引入了一些新的功能，这些功能使它更加强大和易于使用，例如：</p>
+<ul>
+<li>注释。</li>
+<li>使用各种可用的策略在任意大的线程池中运行测试（所有方法都在自己的线程中，每个测试类一个线程，等等）。</li>
+<li>测试您的代码是否是多线程安全的。</li>
+<li>灵活的测试配置。</li>
+<li>支持数据驱动测试（使用@dataprovider）。</li>
+<li>参数支持。</li>
+<li>强大的执行模型（不再是TestSuite）。</li>
+<li>由各种工具和插件（eclipse、idea、maven等）支持。</li>
+<li>嵌入BeanShell以获得更大的灵活性。</li>
+<li>运行时和日志记录的默认JDK函数（无依赖项）。</li>
+<li>应用服务器测试的依赖方法。.</li>
+</ul>
+<p><strong><a href="https://nunit.org/" target="_blank" rel="noopener">NUnit</a>:</strong><br>它是.net语言的单元测试框架。最初是从JUnit移植而来的，目前的产品版本3已经被完全重写了，它有许多新特性，并且支持各种各样的.NET平台。</p>
+<p><strong><a href="https://xunit.net/" target="_blank" rel="noopener">xUnit.net</a>:</strong><br>xUnit.net是一个免费的、开源的、面向社区的.net框架单元测试工具xunit.net是由nunit v2的原始发明者编写的，它是用于c、f、vb.net和其他.net语言单元测试的最新技术。xunit.net与resharper、coderash、testdriven.net和xamarin一起工作。它是.NET基金会的一部分，根据他们的行为准则运作。它是根据Apache 2（OSI批准的许可证）授权的。</p>
+<p>**<a href="http://jmockit.github.io/" target="_blank" rel="noopener">JMockit</a>: **<br>JMockit是开源的单元测试工具jmockit是一个用于开发人员测试的java工具包，包括模拟api和代码覆盖工具。</p>
+<p><strong><a href="http://emma.sourceforge.net/" target="_blank" rel="noopener">EMMA</a>：</strong><br>EMMA是一个用于测量和报告java代码覆盖率的开源工具包。EMMA支持大规模的企业软件开发，同时保持单个开发人员的快速工作和迭代团队中的每个开发人员现在都可以免费获得代码覆盖率，最主要的是可以很快的获得覆盖率！</p>
+<p><strong><a href="https://phpunit.de/" target="_blank" rel="noopener">PHPUnit</a>：</strong><br>PHPUnit是一个面向程序员的php测试框架。它是单元测试框架的xunit架构的一个实例。</p>
+<p><strong><a href="https://www.qa-systems.com/tools/cantata/" target="_blank" rel="noopener">Cantata</a>:</strong><br>Cantata是一个单元和集成测试工具，使开发人员能够在本地和嵌入式目标平台上验证标准兼容或业务关键代码。<br>Cantata通过自动化，帮助加速符合标准的动态测试要求：</p>
+<ul>
+<li>测试框架生成</li>
+<li>测试用例生成</li>
+<li>测试执行</li>
+<li>结果诊断和报告生成</li>
+</ul>
+<p><strong><a href="https://smartbear.com/product/testcomplete/overview/" target="_blank" rel="noopener">TestComplete</a>:</strong><br>TestComplete是一个适用于多种应用类型和技术的自动化测试环境，包括（但不限于）Windows、.NET、WPF、Visual C++、Visual Basic、Delphi、C++Builder、Java和Web应用程序和服务。</p>
+<p><strong><a href="https://mochajs.org/" target="_blank" rel="noopener">Mocha</a>:</strong><br>Mocha是一个功能丰富的javascript测试框架，运行在node.js和浏览器中，使异步测试变得简单有趣。MOCA测试连续运行，允许灵活且准确的报告，同时将异常异常映射到正确的测试用例。托管在github上。</p>
+<p><strong><a href="https://jasmine.github.io/" target="_blank" rel="noopener">Jasmine</a>:</strong><br>Jasmine是一个用于测试JavaScript代码的行为驱动开发框架它不依赖于任何其他JavaScript框架它不需要dom。而且它有一个干净、明显的语法，所以您可以轻松地编写测试。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>单元测试作为测试的第一层次，被很早引入项目。所以在项目开始前，我们同时需要对单元测试的技术选型和测试案例的计划进行准备。这样才可以在项目研发阶段，同时实现单元测试，以保证功能模块的功能。如果大伙有关于单元测试的一些看法，也请留言区回复和分享。</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="true">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/bgm.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d=''
+    >留言</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="/img/avatar.png" height=300 width=300></img>
+                    <p>xingyichuan</p>
+                    <span>记录和分享生活中的快乐和成长！</span>
+                    <dl>
+                        <dd><a href="https://xingyichuan.github.io/" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">20 <p>文章</p></a></li>
+                    <li><a href="/categories">2 <p>分类</p></a></li>
+                    <li><a href="/tags">3 <p>标签</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>目录</h4>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#单元测试定义"><span class="toc-number">2.</span> <span class="toc-text">单元测试定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#单元测试的目标"><span class="toc-number">3.</span> <span class="toc-text">单元测试的目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#单元测试的优势"><span class="toc-number">4.</span> <span class="toc-text">单元测试的优势</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#单元测试的内容"><span class="toc-number">5.</span> <span class="toc-text">单元测试的内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">6.</span> <span class="toc-text">总结</span></a></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2019
+        <span class="gradient-text">
+            xingyichuan
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.3" target="_blank" rel="noopener">v1.4.3</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+    <script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+
+
+
+    <script src="/js/busuanzi.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            if ($('span[id^="busuanzi_"]').length) {
+                initialBusuanzi();
+            }
+        });
+    </script>
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="//www.googletagmanager.com/gtag/js?id=xxxx"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'xxxx');
+    </script>
+
+
+
+
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["记录和分享生活中的快乐和成长！", "聊聊软件测试，分享学习的新知识，充实自己的生活！"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
+
+
+
+
+</html>

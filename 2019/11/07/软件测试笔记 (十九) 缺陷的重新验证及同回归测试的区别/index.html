@@ -1,0 +1,444 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>软件测试笔记（十九）缺陷的重新验证及同回归测试的区别 - 摸着石头过河</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Test Automation Autodesk Inventor API iLogic Forge,"> 
+    <meta name="description" content="聊聊软件测试，分享学习的新知识，充实自己的生活！,前言前面我们聊过《软件测试笔记（十七）回归测试的介绍和工具选择》，今天要分享的是缺陷的重新验证，这个回归测试的概念很相似，但又有所不同，下面会和大家详细聊聊缺陷的重新验证和它们之间的差异。
+缺陷的重,"> 
+    <meta name="author" content="xingyichuan"> 
+    <link rel="alternative" href="atom.xml" title="摸着石头过河" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+    <link rel="stylesheet" href="/css/obsidian.css">
+    <link rel="stylesheet" href="/css/ball-atom.min.css">
+</head>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">摸着石头过河</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="https://xingyichuan.github.io">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">软件测试笔记（十九）缺陷的重新验证及同回归测试的区别</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" target="_blank" rel="noopener" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg);">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="javascript:;" target="_blank" rel="noopener"><b>「 </b>文章<b> 」</b></a>
+                
+                十一月 07, 2019
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/11/07/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0%20(%E5%8D%81%E4%B9%9D)%20%E7%BC%BA%E9%99%B7%E7%9A%84%E9%87%8D%E6%96%B0%E9%AA%8C%E8%AF%81%E5%8F%8A%E5%90%8C%E5%9B%9E%E5%BD%92%E6%B5%8B%E8%AF%95%E7%9A%84%E5%8C%BA%E5%88%AB/" title="软件测试笔记（十九）缺陷的重新验证及同回归测试的区别" class="">软件测试笔记（十九）缺陷的重新验证及同回归测试的区别</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>文章字数</i>
+                    3k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
+                    3 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>阅读次数</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%B5%8B%E8%AF%95%E7%90%86%E8%AE%BA/" rel="tag">测试理论</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前面我们聊过《<a href="https://segmentfault.com/a/1190000020960574" target="_blank" rel="noopener">软件测试笔记（十七）回归测试的介绍和工具选择</a>》，今天要分享的是缺陷的重新验证，这个回归测试的概念很相似，但又有所不同，下面会和大家详细聊聊缺陷的重新验证和它们之间的差异。</p>
+<h2 id="缺陷的重新验证定义"><a href="#缺陷的重新验证定义" class="headerlink" title="缺陷的重新验证定义"></a>缺陷的重新验证定义</h2><p>定义很明确：确保在早期版本中发现并发布的缺陷在当前版本中得到修复或不被修复。</p>
+<p>更简单地说，重新测试就是在修复某个特定的错误之后对其进行测试。</p>
+<p>例如，发布了版本1.0。在测试版本1.0时，测试发现了一些缺陷（例如，缺陷ID 1.0.1并提交到缺陷系统。测试团队测试Build1.1中的缺陷ID1.0.1，以确定缺陷是否已修复。</p>
+<p>按照缺陷生命周期，一旦测试人员发现缺陷，就会将缺陷报告给开发团队。缺陷的状态应该是“提交”。开发团队可以接受或拒绝这个缺陷。如果开发团队接受这个缺陷，那么他们会修复它并在下一个或者几个版本中发布它(取决于缺陷的修复的难易程度)。缺陷的状态将是“准备好进行测试”。现在测试人员验证这个缺陷，以确定它是否被解决。这种测试称为重新验证测试。重新验证测试是一项计划性测试。我们使用的测试用例与我们在早期构建中使用的测试数据相同。如果没有发现缺陷，那么我们将缺陷的状态更改为“已修复”，否则我们将状态更改为“未修复”，并将缺陷重新发送给开发团队。</p>
+<h2 id="何时执行缺陷的重新验证？"><a href="#何时执行缺陷的重新验证？" class="headerlink" title="何时执行缺陷的重新验证？"></a>何时执行缺陷的重新验证？</h2><ol>
+<li>如果在发行说明中指定了特定的错误修复：一旦开发团队发布了新的版本，那么测试团队就必须测试已经发布的修复后的缺陷，以确保缺陷是否被修复。</li>
+<li>当错误被拒绝时：有时，开发团队会拒绝一些由测试人员提出的缺陷，并提到缺陷的状态是“不可重现”。在这种情况下，测试人员需要重新测试同一个问题，让开发人员知道该问题是有效的和可重现的。<br> 为了避免这种情况，我们需要编写一个好的缺陷报告。请参阅《<a href="https://segmentfault.com/a/1190000020885235" target="_blank" rel="noopener">软件测试笔记（九）怎么样写才是一个好的缺陷报告？</a>》。</li>
+</ol>
+<h2 id="缺陷的重新验证及同回归测试的区别"><a href="#缺陷的重新验证及同回归测试的区别" class="headerlink" title="缺陷的重新验证及同回归测试的区别"></a>缺陷的重新验证及同回归测试的区别</h2><h4 id="定义不同："><a href="#定义不同：" class="headerlink" title="定义不同："></a>定义不同：</h4><ul>
+<li><p>回归测试</p>
+<p>  当生产代码被修改时，我们都会进行软件回归测试。通常，我们在以下情况下执行回归测试：</p>
+<ol>
+<li>当新功能添加到应用程序时。示例：一个网站有一个登录功能，允许用户只使用电子邮件登录。现在，新功能看起来像是“提供了一个新功能，可以使用微信登录”。</li>
+<li>当有变更需求时。示例：从之前可用的登录页中删除“记住密码”。</li>
+<li>当有缺陷修复时。示例：假设登录按钮在登录页面中不起作用，测试人员报告缺陷，指出登录按钮已损坏。一旦开发人员修复了这个缺陷，测试人员就会测试它，以确保登录按钮是否按照预期的结果工作。同时测试人员回归测试与登录按钮相关的其他功能。</li>
+<li>当出现性能问题修复时。示例：加载主页需要5秒钟将加载时间缩短到2秒，我们需要保证主页相关的回归测试都能正常通过。</li>
+<li>当环境发生变化时。示例：将数据库从MySQL更新为Oracle。</li>
+<li>当有代码重构的时。</li>
+</ol>
+</li>
+<li><p>缺陷的重新验证<br>  以确保在早期生成中发现并发布的缺陷在当前生成中是否得到修复。</p>
+</li>
+</ul>
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><p>下面以一个登陆界面作为我们比较两者的区别的案例。首先，我们假设两种情况：<br>案例1：登录页面-登录按钮不起作用（错误）<br>案例2：登录页面-添加了“保持登录”复选框（新功能）</p>
+<p>在案例1中，登录按钮不起作用，所以测试人员报告一个缺陷。一旦修复了这个错误，测试人员就会测试它，以确保登录按钮是否按照预期的结果工作。<br>在前面，也有一篇关于《<a href="https://segmentfault.com/a/1190000020852793" target="_blank" rel="noopener">软件测试笔记（六）缺陷报告应该涵盖哪些内容</a>》的文章，可以帮助更好的提交缺陷。</p>
+<p>在案例2中，测试人员测试新特性以确保新特性（保持登录）是否按预期工作。<br>案例1正在缺陷的重新验证中。在这里，测试人员使用错误报告中提到的重现步骤，重新测试在早期构建中发现的错误。</p>
+<p>同样在案例1中，测试人员测试与登陆按钮相关的其他功能，我们称之为回归测试。</p>
+<p>在案例2中，测试人员测试新功能（保持登录状态）并测试相关功能。在测试新特性的同时测试相关的功能将进行回归测试。</p>
+<p>另一个例子：</p>
+<p>想象一下，一个正在测试的应用软件有三个模块，即管理、购买和财务。财务模块依赖于采购模块。如果测试人员在购买模块上发现一个缺陷并提交。缺陷修复后，测试人员需要重新测试，以验证与购买相关的缺陷是否修复，并且测试人员还需要进行回归测试，以测试依赖于购买模块的财务模块。</p>
+<p>回归和复测之间的一些其他差异：<br>对失败的测试用例进行缺陷的重新验证，而对通过的测试用例进行回归测试。<br>缺陷的重新验证确保原始缺陷已被纠正，而回归测试确保没有意外的副作用。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这里大家可以了解了缺陷的重新验证的定义，以及什么时候我们需要执行缺陷的重新验证。同时也对比了非常会让人混淆的回归测试，以及其应用的场景，希望对大家有所帮助。如果大家关于缺陷的重新验证及同回归测试有什么想法，也请留言区回复。</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="true">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/bgm.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d=''
+    >留言</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="/img/avatar.png" height=300 width=300></img>
+                    <p>xingyichuan</p>
+                    <span>记录和分享生活中的快乐和成长！</span>
+                    <dl>
+                        <dd><a href="https://xingyichuan.github.io/" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">20 <p>文章</p></a></li>
+                    <li><a href="/categories">2 <p>分类</p></a></li>
+                    <li><a href="/tags">3 <p>标签</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>目录</h4>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缺陷的重新验证定义"><span class="toc-number">2.</span> <span class="toc-text">缺陷的重新验证定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#何时执行缺陷的重新验证？"><span class="toc-number">3.</span> <span class="toc-text">何时执行缺陷的重新验证？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缺陷的重新验证及同回归测试的区别"><span class="toc-number">4.</span> <span class="toc-text">缺陷的重新验证及同回归测试的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2019
+        <span class="gradient-text">
+            xingyichuan
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.3" target="_blank" rel="noopener">v1.4.3</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+    <script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+
+
+
+    <script src="/js/busuanzi.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            if ($('span[id^="busuanzi_"]').length) {
+                initialBusuanzi();
+            }
+        });
+    </script>
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="//www.googletagmanager.com/gtag/js?id=xxxx"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'xxxx');
+    </script>
+
+
+
+
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["记录和分享生活中的快乐和成长！", "聊聊软件测试，分享学习的新知识，充实自己的生活！"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
+
+
+
+
+</html>
