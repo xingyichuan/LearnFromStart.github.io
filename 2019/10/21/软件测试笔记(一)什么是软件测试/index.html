@@ -1,0 +1,491 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>软件测试笔记（一）什么是软件测试-定义、类型、方法? - 摸着石头过河</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Test Automation Autodesk Inventor API iLogic Forge,"> 
+    <meta name="description" content="聊聊软件测试，分享学习的新知识，充实自己的生活！,为什么我们需要软件测试？可能有些人会有这样的疑问：“为什么我们需要软件测试”或者“为什么需要测试”或者“为什么需要软件测试”。
+当我进入测试行业的时候，我不知道什么是软件测试以及为什么需要它。我也不,"> 
+    <meta name="author" content="xingyichuan"> 
+    <link rel="alternative" href="atom.xml" title="摸着石头过河" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+    <link rel="stylesheet" href="/css/obsidian.css">
+    <link rel="stylesheet" href="/css/ball-atom.min.css">
+</head>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">摸着石头过河</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="https://xingyichuan.github.io">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">软件测试笔记（一）什么是软件测试-定义、类型、方法?</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" target="_blank" rel="noopener" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg);">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="/categories/测试"><b>「
+                    </b>测试<b> 」</b></a>
+                
+                十月 21, 2019
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/10/21/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0(%E4%B8%80)%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/" title="软件测试笔记（一）什么是软件测试-定义、类型、方法?" class="">软件测试笔记（一）什么是软件测试-定义、类型、方法?</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>文章字数</i>
+                    4.6k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
+                    4 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>阅读次数</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AE%9A%E4%B9%89/" rel="tag">软件测试定义</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <h2 id="为什么我们需要软件测试？"><a href="#为什么我们需要软件测试？" class="headerlink" title="为什么我们需要软件测试？"></a>为什么我们需要软件测试？</h2><p>可能有些人会有这样的疑问：“为什么我们需要软件测试”或者“为什么需要测试”或者“为什么需要软件测试”。</p>
+<p>当我进入测试行业的时候，我不知道什么是软件测试以及为什么需要它。我也不知道从哪里开始。也许你的处境和我很久以前一样。就我而言，软件测试是一门艺术，它评估软件应用程序的功能，目的是发现开发的软件是否满足指定的要求，并确定缺陷，以确保产品无缺陷（理想状态），从而生产出高质量的产品。</p>
+<p><strong>假设如果在软件开发过程中没有软件测试呢？</strong></p>
+<p>按照目前的趋势，由于数字化的不断变化和发展，我们的生活在各个方面都在改善。我们的工作方式也改变了。我们在网上访问我们的银行，在网上购物，在网上订购食物等等。我们依赖软件和系统。如果这些系统出现故障怎么办。我们都知道，从财务损失和商誉的角度来看，一个小漏洞对企业的影响是巨大的。为了交付高质量的产品，我们需要在软件开发过程中进行软件测试。</p>
+<p>软件测试之所以成为信息技术领域非常重要和不可或缺的一部分，原因如下。</p>
+<ul>
+<li><p>成本效益<br>事实上，对于任何复杂的系统，设计缺陷永远不能完全排除。这并不是因为开发人员粗心大意，而是因为系统的复杂性是通常是难以处理的。如果设计级别的问题未被发现，那么追溯和纠正缺陷将变得更加困难。解决它会变得更贵。有时在修复一个错误时，我们可能会不知不觉地在另一个模块中引入另一个错误，这就需要我们进行回归测试。如果可以在开发的早期阶段识别出这些错误（bug），那么修复它们的成本就要低得多。这就是为什么在软件开发生命周期的早期阶段发现缺陷是很重要的。测试的好处之一是成本效益。</p>
+<p>在软件开发生命周期的各个阶段，最好尽早开始测试，并定期测试，以确保应用程序的开发符合要求。</p>
+</li>
+<li><p>顾客满意度<br>在任何企业中，最终的目标都是让顾客满意，顾客就是上帝。顾客满意是非常重要！！！软件测试改善了应用程序的用户体验，并使客户满意。快乐的顾客意味着企业有更多的收入。有必要进行软件测试的原因之一是提供最佳的用户体验。</p>
+</li>
+<li><p>安全<br>这可能是软件测试中最敏感和最脆弱的部分。测试（渗透测试和安全测试）有助于产品安全。黑客未经授权获取数据，例如facebook的个人隐私数据的泄露，还有国内的一些知名网站的关于身份证，手机号，家庭住址等等信息的泄露。黑客窃取用户信息并将其用于自身利益，或者售卖给不法买家，损害使用产品的顾客，这绝对不是我们想要看到的结果。如果你的产品不安全，用户就不会喜欢你的产品。用户总是寻找值得信赖的产品。测试有助于消除产品中的漏洞。</p>
+</li>
+<li><p>产品质量<br>软件测试是一门艺术，它有助于加强一个公司的市场声誉，通过交付高质量的产品给客户所提到的需求规格文件。</p>
+<p>由于这些原因，软件测试成为软件开发过程中非常重要和不可或缺的一部分。</p>
+</li>
+</ul>
+<h2 id="回到最本质的问题-什么是软件测试？"><a href="#回到最本质的问题-什么是软件测试？" class="headerlink" title="回到最本质的问题, 什么是软件测试？"></a>回到最本质的问题, 什么是软件测试？</h2><p>软件测试是一个过程，旨在评估软件应用程序的功能，以确定开发的软件是否满足指定的要求，并确定缺陷，以确保产品无缺陷，从而生产出高质量的产品。</p>
+<h2 id="软件测试种类："><a href="#软件测试种类：" class="headerlink" title="软件测试种类："></a>软件测试种类：</h2><ul>
+<li><p>手工测试：<br>手工测试是手工测试软件的过程，以了解更多关于它的信息，找出什么是工作的，什么是不工作的。这通常包括验证需求文档中指定的所有特性，但通常也包括测试人员从最终用户的角度尝试软件。手动测试计划从完全脚本化的测试用例、为测试人员提供详细的步骤和预期的结果，到指导探索性测试会话的高级指南，各不相同。市场上有很多复杂的工具来帮助手工测试，但是如果你想要一个简单而灵活的地方开始，可以尝试使用下POSTMAN.</p>
+</li>
+<li><p>自动化测试：<br>自动化测试是使用自动化工具来发现软件缺陷的测试过程。在此过程中，测试人员使用自动化工具执行测试脚本并自动生成测试结果。功能测试的一些著名自动化测试工具是qtp/uft和selenium。</p>
+</li>
+</ul>
+<h2 id="按照测试的具体内容来分的测试方法："><a href="#按照测试的具体内容来分的测试方法：" class="headerlink" title="按照测试的具体内容来分的测试方法："></a>按照测试的具体内容来分的测试方法：</h2><ul>
+<li><p>静态测试：<br>在软件测试中也称为验证。验证是检查文档和文件的静态方法。验证是一个过程，以确保我们创建的产品是否是正确的，即验证我们的需求。这里包括的活动有检查、审查、演练。</p>
+</li>
+<li><p>动态测试：<br>同样也是也是一种验证, 测试真实产品的动态过程。同样也是以确保我们创建的产品是否是正确的。其中涉及的活动是测试应用程序。不同于上面的静态测试，而是更侧重于产品的功能。</p>
+</li>
+</ul>
+<h2 id="按照是否需要接触功能代码来分的测试方法分类："><a href="#按照是否需要接触功能代码来分的测试方法分类：" class="headerlink" title="按照是否需要接触功能代码来分的测试方法分类："></a>按照是否需要接触功能代码来分的测试方法分类：</h2><ul>
+<li><p>白盒测试：<br>又称玻璃盒、透明盒、结构测试。白盒测试是基于应用程序内部的代码结构。在白盒测试中，是以系统的内部视角，以及需要相应的编程技巧来设计测试用例。这种测试通常在单元测试级别进行。</p>
+</li>
+<li><p>黑盒测试：<br>也称为基于设计文档的行为/规范/输入输出测试。黑盒测试是一种软件测试方法，在这种方法中，测试人员在不查看内部代码结构的情况下评估软件的功能。</p>
+</li>
+</ul>
+<p>黑盒测试同时可以分为两种测试：</p>
+<ul>
+<li><p>功能测试：<br>简单地说，系统本身的功能其实就是一种功能测试。验证软件应用程序的每个功能是否按照需求文档中的规定运行。通过提供适当的输入来测试所有功能，以验证实际输出是否与预期输出匹配。它属于黑盒测试的范围，测试人员不必关心应用程序的源代码。</p>
+</li>
+<li><p>非功能测试：<br>简单地说，系统性能测试就是非功能性测试。非功能性测试是指软件的性能、负载、压力、可扩展性、安全性、兼容性等各个方面，主要关注的是提高用户体验系统对请求的响应速度。<br>灰盒测试：灰盒测试是白盒测试和黑盒测试的结合。从事此类测试的测试人员需要访问产品的设计和接口文档，来创建更好的测试用例。</p>
+</li>
+</ul>
+<p>无论您是黑盒、白盒还是灰盒测试人员，都需要维护测试用例。</p>
+<h2 id="按照是测试级别的测试方法分类："><a href="#按照是测试级别的测试方法分类：" class="headerlink" title="按照是测试级别的测试方法分类："></a>按照是测试级别的测试方法分类：</h2><ul>
+<li><p>单元测试：<br>前面的白盒测试也提到了单元测试。单元测试是为了检查源代码的各个模块是否正常工作。即由开发人员在开发人员的环境中分别测试应用程序的每个单元。它也可以称之为模块测试或组件测试。</p>
+</li>
+<li><p>集成测试：<br>集成测试是测试多个模块之间的连接或数据传输的过程。又称为I&amp;T （Integration Testing）测试或流测试。按照测试顺序，又分为自上而下法、自下而上法和夹心法（自上而下和自下而上相结合）。</p>
+</li>
+<li><p>系统测试（端到端测试）：<br>通常来说这是一个黑盒测试。测试完整的应用程序这也称为端到端的测试。确保软件在目标系统中可以正常工作。验证对不同的系统输入，同时检查所需的输出。测试用户对应用程序的体验。</p>
+</li>
+<li><p>验收测试：<br>这是由最终用户和测试人员一起完成的，以验证应用程序的功能。验收测试成功后。为确定应用程序是否按要求开发而进行的正式测试。它允许客户接受或拒绝申请。验收测试的类型有alpha、beta和gamma。</p>
+</li>
+</ul>
+<h2 id="测试产出："><a href="#测试产出：" class="headerlink" title="测试产出："></a>测试产出：</h2><p>交付给软件项目的可交付成果。针对于遵循产品生命周期，也就是在交付给客户之前经历了不同的阶段，每个阶段都会有一些测试可交付成果。一些可交付成果在测试阶段开始前提供，一些在测试阶段提供，其余在测试阶段完成后提供。</p>
+<p>一些测试可交付成果如下：</p>
+<ul>
+<li>测试计划</li>
+<li>测试（跟踪）矩阵</li>
+<li>测试用例</li>
+<li>测试脚本</li>
+<li>测试套件（测试合集）</li>
+<li>测试数据或测试准备数据</li>
+<li>测试实验工具</li>
+</ul>
+<h2 id="测试的原则："><a href="#测试的原则：" class="headerlink" title="测试的原则："></a>测试的原则：</h2><p>软件测试包括一些在测试项目时起着重要作用的原则。</p>
+<p>软件测试的原则如下：</p>
+<ul>
+<li>测试可重现的缺陷</li>
+<li>彻底的测试是不可能的</li>
+<li>尽早早测试</li>
+<li>缺陷归类</li>
+<li>农药悖论 （用来描述这样一种现象，对软件进行越多的测试，那么该软件对软件测试人员的测试就越具有免疫力，对于测试人员需要转换测试思路来发现新的问题。）</li>
+<li>测试是依赖于上下文的</li>
+<li>系统或多或少会存在bug</li>
+<li>阅读更多：详细说明文档</li>
+</ul>
+<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p>上面介绍了软件测试的意义，定义，以及常用的测试方法和类型，当然实际的测试种类会更多（大约有一百多种）。</p>
+<p>有机会的话，在以后的博客中，给大家更新下着一百多种测试类型。</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="true">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/bgm.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='f3b100844fbc40ee28bb'
+        data-cs='58719992b9ecb2f8c085f5f8c21e538911de5624'
+        data-r='xingyichuan.github.io'
+        data-o='xingyichuan'
+        data-a='xingyichuan'
+        data-d=''
+    >留言</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="/img/avatar.png" height=300 width=300></img>
+                    <p>xingyichuan</p>
+                    <span>记录和分享生活中的快乐和成长！</span>
+                    <dl>
+                        <dd><a href="https://xingyichuan.github.io/" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">20 <p>文章</p></a></li>
+                    <li><a href="/categories">2 <p>分类</p></a></li>
+                    <li><a href="/tags">3 <p>标签</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>目录</h4>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么我们需要软件测试？"><span class="toc-number">1.</span> <span class="toc-text">为什么我们需要软件测试？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#回到最本质的问题-什么是软件测试？"><span class="toc-number">2.</span> <span class="toc-text">回到最本质的问题, 什么是软件测试？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软件测试种类："><span class="toc-number">3.</span> <span class="toc-text">软件测试种类：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#按照测试的具体内容来分的测试方法："><span class="toc-number">4.</span> <span class="toc-text">按照测试的具体内容来分的测试方法：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#按照是否需要接触功能代码来分的测试方法分类："><span class="toc-number">5.</span> <span class="toc-text">按照是否需要接触功能代码来分的测试方法分类：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#按照是测试级别的测试方法分类："><span class="toc-number">6.</span> <span class="toc-text">按照是测试级别的测试方法分类：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试产出："><span class="toc-number">7.</span> <span class="toc-text">测试产出：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试的原则："><span class="toc-number">8.</span> <span class="toc-text">测试的原则：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结："><span class="toc-number">9.</span> <span class="toc-text">总结：</span></a></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2019
+        <span class="gradient-text">
+            xingyichuan
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.3" target="_blank" rel="noopener">v1.4.3</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+    <script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+
+
+
+    <script src="/js/busuanzi.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            if ($('span[id^="busuanzi_"]').length) {
+                initialBusuanzi();
+            }
+        });
+    </script>
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="//www.googletagmanager.com/gtag/js?id=xxxx"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'xxxx');
+    </script>
+
+
+
+
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["记录和分享生活中的快乐和成长！", "聊聊软件测试，分享学习的新知识，充实自己的生活！"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
+
+
+
+
+</html>

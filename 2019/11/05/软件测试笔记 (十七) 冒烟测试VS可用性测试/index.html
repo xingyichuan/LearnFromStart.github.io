@@ -1,0 +1,452 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>软件测试笔记（十七）冒烟测试VS可用性测试 - 摸着石头过河</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Test Automation Autodesk Inventor API iLogic Forge,"> 
+    <meta name="description" content="聊聊软件测试，分享学习的新知识，充实自己的生活！,前言冒烟测试和可用性测试都有自己的目标和执行的优先顺序。这两种类型的测试对于项目的成功起着关键的作用。对于新人来说，这两种类型通常会弄混淆。希望在本文结束时，可以对理智和烟雾测试有一个清晰的概念。
+,"> 
+    <meta name="author" content="xingyichuan"> 
+    <link rel="alternative" href="atom.xml" title="摸着石头过河" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+    <link rel="stylesheet" href="/css/obsidian.css">
+    <link rel="stylesheet" href="/css/ball-atom.min.css">
+</head>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">摸着石头过河</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="https://xingyichuan.github.io">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">软件测试笔记（十七）冒烟测试VS可用性测试</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" target="_blank" rel="noopener" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg);">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="javascript:;" target="_blank" rel="noopener"><b>「 </b>文章<b> 」</b></a>
+                
+                十一月 05, 2019
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/11/05/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0%20(%E5%8D%81%E4%B8%83)%20%E5%86%92%E7%83%9F%E6%B5%8B%E8%AF%95VS%E5%8F%AF%E7%94%A8%E6%80%A7%E6%B5%8B%E8%AF%95/" title="软件测试笔记（十七）冒烟测试VS可用性测试" class="">软件测试笔记（十七）冒烟测试VS可用性测试</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>文章字数</i>
+                    2.8k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
+                    3 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>阅读次数</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%B5%8B%E8%AF%95%E7%90%86%E8%AE%BA/" rel="tag">测试理论</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>冒烟测试和可用性测试都有自己的目标和执行的优先顺序。这两种类型的测试对于项目的成功起着关键的作用。对于新人来说，这两种类型通常会弄混淆。希望在本文结束时，可以对理智和烟雾测试有一个清晰的概念。</p>
+<h2 id="什么是冒烟测试"><a href="#什么是冒烟测试" class="headerlink" title="什么是冒烟测试"></a>什么是冒烟测试</h2><p>冒烟测试是为了确保我们从开发团队收到的软件功能是否可测试。也称为“第0天”测试（先导测试），这是在“构建软件功能级别”完成的。</p>
+<p>如果对应的关键功能不起作用或关键错误尚未修复时，在不浪费测试时间的前提现，来简单地测试整个应用程序是有帮助的。在这里，我们关注的重点是主要和核心软件工作流程。</p>
+<h4 id="如何进行冒烟测试？"><a href="#如何进行冒烟测试？" class="headerlink" title="如何进行冒烟测试？"></a>如何进行冒烟测试？</h4><p>为了进行冒烟测试，我们不必编写特定的测试用例。我们只是从已经编写好的测试用例中，选择必要的测试用例即可。</p>
+<p>我们真的为所有测试类型编写测试用例吗？在本文中，我们对选择测试类型来编写测试用例给出了明确的想法。</p>
+<p>如前所述，在冒烟测试中，我们主要关注的是核心应用程序的工作流程。因此，我们从我们的测试集合中选择测试用例，它涵盖了应用程序的主要功能。一般来说，我们选择的测试用例数量最少，执行时间不会超过半小时。</p>
+<p>假设您正在为一个电子商务网站工作。当发布一个新的构建进行测试时，作为一个测试人员，您必须确保核心功能是否正常工作。因此，您尝试访问电子商务网站，并添加一个项目到您的购物车下订单。这是大多数电子商务网站的主要流程。如果此流有效，则可以说此生成已通过。您可以继续在同一个构建上进行功能测试。</p>
+<h4 id="冒烟测试需要自动化吗？"><a href="#冒烟测试需要自动化吗？" class="headerlink" title="冒烟测试需要自动化吗？"></a>冒烟测试需要自动化吗？</h4><p>是的，我们需要它。它节省了很多测试时间假设你有50-100个冒烟测试用例。为了执行这些50-100个测试用例，大约需要4-6个小时的时间。如果您有这些测试用例的自动化脚本，那么您可以在发布构建后执行它们，并在手动执行冒烟测试测试用例所花费的时间内确认是否通过了冒烟测试。因此，大多数团队都自动化了冒烟测试用例。</p>
+<h2 id="什么是可用性测试"><a href="#什么是可用性测试" class="headerlink" title="什么是可用性测试"></a>什么是可用性测试</h2><p>可用性测试在发布阶段进行，以检查应用程序的主要功能，而不必深入。它也被称为回归测试的子集。这是在“发布级别”完成的。</p>
+<p>有时由于发布时间限制，无法对构建进行严格的回归测试，而可用性测试则通过检查主要功能来完成这一部分。</p>
+<p>大多数时候，我们没有足够的时间来完成整个测试。特别是在敏捷方法论中，我们会受到产品负责人的压力，要求在几小时内或一天结束时完成测试。在这种情况下，我们选择可用性测试。在这种情况下，可用性测试起着关键作用。</p>
+<h4 id="如何进行可用性测试？"><a href="#如何进行可用性测试？" class="headerlink" title="如何进行可用性测试？"></a>如何进行可用性测试？</h4><p>和冒烟测试一样，我们不为可用性测试编写单独的测试用例。我们只是从已经编写好的测试用例中选择必要的测试用例。</p>
+<p>它是回归测试的一个子集。当涉及到可用性测试的时候，主要考虑的是功能能否按照需求文档的要求工作。</p>
+<p>假设你在一个电子商务网站工作。发布了一个与搜索功能相关的新功能。在这里，你的主要精力应该放在搜索功能上。一旦你确定搜索功能运行良好，然后你转移到其他主要功能，如支付流。</p>
+<h4 id="可用性测试需要自动化吗？"><a href="#可用性测试需要自动化吗？" class="headerlink" title="可用性测试需要自动化吗？"></a>可用性测试需要自动化吗？</h4><p>是的，我们也需要它。它节省了很多测试时间假设你有50-100个可用性测试用例。那么您可以在收到稳定构建后执行它们，而不是人为去手动执行这些可用性测试，而是把精力放在其他的测试上去。</p>
+<h2 id="冒烟测试VS可用性测试"><a href="#冒烟测试VS可用性测试" class="headerlink" title="冒烟测试VS可用性测试"></a>冒烟测试VS可用性测试</h2><p>在一个项目的开发发布过程中，开发团队构建软件给测试人员测试，测试拿到构建完成的软件后，首先检查产品的基本状况和功能，我们称之为冒烟测试。如果测试人员，在冒烟测试后觉得产品可以延展更多的测试，例如登录页面包含管理员，员工和一般用户。测试人员针对主要的功能进行测试而不延展更多的测试，我们称之为可用性测试。</p>
+<table>
+<thead>
+<tr>
+<th>冒烟测试</th>
+<th>可用性测试</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>进行冒烟测试，以确保测试人员从开发团队收到的构建软件是否可测试</td>
+<td>在发布阶段进行可用性测试，以检查应用程序的主要功能，而不必深入</td>
+</tr>
+<tr>
+<td>由开发人员和测试人员共同执行</td>
+<td>由测试人员单独进行的</td>
+</tr>
+<tr>
+<td>以端对端的方式测试整个应用</td>
+<td>测试整个应用某个特定组件或者功能</td>
+</tr>
+<tr>
+<td>构建软件可能是不稳定的</td>
+<td>构建软件相对稳定的</td>
+</tr>
+</tbody></table>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>冒烟测试和可用性测试都是回归测试的子集，具体的目标不尽相同，冒烟测试为了确保构建的稳定，可用，可用性测试则是保证目标功能可以正常使用。希望上面的内容可以帮助理清冒烟测试和可用性测试的区别。如果有关于冒烟测试和可用性测试的相关话题，也请大家评论区留言。</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="true">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/bgm.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='f3b100844fbc40ee28bb'
+        data-cs='58719992b9ecb2f8c085f5f8c21e538911de5624'
+        data-r='xingyichuan.github.io'
+        data-o='xingyichuan'
+        data-a='xingyichuan'
+        data-d=''
+    >留言</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="/img/avatar.png" height=300 width=300></img>
+                    <p>xingyichuan</p>
+                    <span>记录和分享生活中的快乐和成长！</span>
+                    <dl>
+                        <dd><a href="https://xingyichuan.github.io/" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">20 <p>文章</p></a></li>
+                    <li><a href="/categories">2 <p>分类</p></a></li>
+                    <li><a href="/tags">3 <p>标签</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>目录</h4>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是冒烟测试"><span class="toc-number">2.</span> <span class="toc-text">什么是冒烟测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是可用性测试"><span class="toc-number">3.</span> <span class="toc-text">什么是可用性测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#冒烟测试VS可用性测试"><span class="toc-number">4.</span> <span class="toc-text">冒烟测试VS可用性测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2019
+        <span class="gradient-text">
+            xingyichuan
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.3" target="_blank" rel="noopener">v1.4.3</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+    <script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+
+
+
+    <script src="/js/busuanzi.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            if ($('span[id^="busuanzi_"]').length) {
+                initialBusuanzi();
+            }
+        });
+    </script>
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="//www.googletagmanager.com/gtag/js?id=xxxx"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'xxxx');
+    </script>
+
+
+
+
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["记录和分享生活中的快乐和成长！", "聊聊软件测试，分享学习的新知识，充实自己的生活！"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
+
+
+
+
+</html>

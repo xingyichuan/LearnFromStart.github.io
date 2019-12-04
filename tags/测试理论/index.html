@@ -1,0 +1,850 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tag: 测试理论 - 摸着石头过河</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Test Automation Autodesk Inventor API iLogic Forge,"> 
+    <meta name="description" content="聊聊软件测试，分享学习的新知识，充实自己的生活！,"> 
+    <meta name="author" content="xingyichuan"> 
+    <link rel="alternative" href="atom.xml" title="摸着石头过河" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+    <link rel="stylesheet" href="/css/obsidian.css">
+    <link rel="stylesheet" href="/css/ball-atom.min.css">
+</head>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">摸着石头过河</span>
+    <div id="loader"></div>
+    <div class="nav">
+    <ul id="menu-menu" class="menu">
+        
+        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/whoami/" title="ABOUT" external="false">ABOUT</a>
+        </li>
+        
+        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/categories/" title="CATEGORIES" external="false">CATEGORIES</a>
+        </li>
+        
+        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/tags/" title="TAGS" external="false">TAGS</a>
+        </li>
+        
+        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/archives/" title="ARCHIVES" external="false">ARCHIVES</a>
+        </li>
+        
+    </ul>
+    <p class="copyright" id="copyright">
+        &copy; 2019 xingyichuan.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+    </p>
+</div>
+
+<div id="container">
+    
+<div class="search-box">
+    <form class="site-search-form">
+        <span class="iconfont icon-search"></span>
+        <input type="text" id="local-search-input" class="st-search-input" />
+        <div class="iconfont icon-cross search-box-close"></div>
+    </form>
+    <div class="search-scrollable">
+        <div id="local-search-result" class="local-search-result-cls" data-initialise="首次搜索，正在载入索引文件，请稍后……"
+            data-start="输入关键词搜索。" data-empty="没有找到内容，请尝试更换检索词。">
+            <span>输入关键词搜索。</span>
+        </div>
+    </div>
+</div>
+<div id="header">
+    <div>
+        <div class="logo animated fadeInDown">
+            <img src="/img/favicon.png" alt="">
+            <a class="image-logo" href="/"></a>
+        </div>
+        <ul id="menu-menu" class="menu text-menu">
+            
+            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+                <a href="/whoami/" title="ABOUT" external="false" class="menu-link">ABOUT</a>
+            </li>
+            
+            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+                <a href="/categories/" title="CATEGORIES" external="false" class="menu-link">CATEGORIES</a>
+            </li>
+            
+            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+                <a href="/tags/" title="TAGS" external="false" class="menu-link">TAGS</a>
+            </li>
+            
+            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+                <a href="/archives/" title="ARCHIVES" external="false" class="menu-link">ARCHIVES</a>
+            </li>
+            
+            
+            <li class="animated fadeInDown search-bar iconfont icon-search"></li>
+            
+        </ul>
+        <div class="iconfont icon-menu switchmenu gradient-text animated fadeInDown"></div>
+    </div>
+</div>
+<div id="screen">
+    <div id="mark">
+        <div class="cover animated fadeIn" style="
+            animation-delay: 900ms;
+            animation-duration: 2.8s;
+            background-image:
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.56), #100e17),
+                url(/img/cover.jpg);">
+        </div>
+    </div>
+    
+    <div id="post0" class="else">
+        <p class="animated fadeInDown">
+            
+            <a href="javascript:;" target="_blank" rel="noopener"><b>「 </b>文章<b> 」</b></a>
+            
+            十一月 07, 2019
+        </p>
+        <h3 class="post-title animated fadeInDown">
+            <a href="/2019/11/07/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0%20(%E5%8D%81%E4%B9%9D)%20%E7%BC%BA%E9%99%B7%E7%9A%84%E9%87%8D%E6%96%B0%E9%AA%8C%E8%AF%81%E5%8F%8A%E5%90%8C%E5%9B%9E%E5%BD%92%E6%B5%8B%E8%AF%95%E7%9A%84%E5%8C%BA%E5%88%AB/" title="软件测试笔记（十九）缺陷的重新验证及同回归测试的区别" class="posttitle">软件测试笔记（十九）缺陷的重新验证及同回归测试的区别</a></h3>
+        
+        <p class="post-count animated fadeInDown">
+            
+            <span>
+                <b class="iconfont icon-text2"></b> <i>文章字数</i>
+                3k
+            </span>
+            
+            
+            <span>
+                <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
+                3 mins.
+            </span>
+            
+            
+        </p>
+        
+        
+        <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%B5%8B%E8%AF%95%E7%90%86%E8%AE%BA/" rel="tag">测试理论</a></li></ul>
+        
+        <div class="md-content animated fadeIn">
+            
+            <p>前面我们聊过《<a href="https://segmentfault.com/a/1190000020960574" target="_blank" rel="noopener">软件测试笔记（十七）回归测试的介绍和工具选择</a>》，今天要分享的是缺陷的重新验证，这个回归测试的概念很相似，但又有所不同，下面会和大家详细聊聊缺陷的重新验证和它们之间的差异。</p>
+<p>定义很明确：确...</p>
+            
+            <span class="read-more"><a href="/2019/11/07/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0%20(%E5%8D%81%E4%B9%9D)%20%E7%BC%BA%E9%99%B7%E7%9A%84%E9%87%8D%E6%96%B0%E9%AA%8C%E8%AF%81%E5%8F%8A%E5%90%8C%E5%9B%9E%E5%BD%92%E6%B5%8B%E8%AF%95%E7%9A%84%E5%8C%BA%E5%88%AB/" title="查看全文" class="posttitle">查看全文</a>
+                <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
+    </div>
+    
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="typed-text"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div id="primary">
+        
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="javascript:;" target="_blank" rel="noopener"><b>「 </b>文章<b> 」</b></a>
+            
+            十一月 06, 2019
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/11/06/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0%20(%E5%8D%81%E5%85%AB)%20%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88%E5%92%8C%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E7%9A%84%E5%8C%BA%E5%88%AB/" title="软件测试笔记（十八）测试方案和测试用例的区别" class="posttitle">软件测试笔记（十八）测试方案和测试用例的区别</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>文章字数</i>
+                        1.8k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
+                        2 mins.
+                    </span>
+                
+                
+            </p>
+            
+                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%B5%8B%E8%AF%95%E7%90%86%E8%AE%BA/" rel="tag">测试理论</a></li></ul>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <p>在测试的面试过程中，经常会有面试官问“测试方案和测试用例的区别”。两者都是测试的产出，想要区别两者可以从下面的这些方面着手。</p>
+<p>测试方案给出了我们必须测试的内容。测试场景就像一个抽象的测试用例。</p>
+<p>测试方案回答“要测试什么”。</p>
+<p>假设我们需要测试应用程序登录页面的功能。登录页面功能的测试方案如下：</p>
+<p>测试方案示例：验证登录功能</p>
+<p>测试用例是一个测试方案的可以是正向的或者是逆向的可执行步骤的集合，包含一组前置条件、测试数据、预期结果、后置条件和实际结果。</p>
+<p>测试用例回答“如何测试”。</p>
+<p>假设我们需要测试应用程序...</p>
+            
+            <span class="read-more"><a href="/2019/11/06/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0%20(%E5%8D%81%E5%85%AB)%20%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88%E5%92%8C%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E7%9A%84%E5%8C%BA%E5%88%AB/" title="查看全文" class="posttitle">查看全文</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
+    </div>
+</div>
+
+
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="javascript:;" target="_blank" rel="noopener"><b>「 </b>文章<b> 」</b></a>
+            
+            十一月 05, 2019
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/11/05/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0%20(%E5%8D%81%E4%B8%83)%20%E5%86%92%E7%83%9F%E6%B5%8B%E8%AF%95VS%E5%8F%AF%E7%94%A8%E6%80%A7%E6%B5%8B%E8%AF%95/" title="软件测试笔记（十七）冒烟测试VS可用性测试" class="posttitle">软件测试笔记（十七）冒烟测试VS可用性测试</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>文章字数</i>
+                        2.8k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
+                        3 mins.
+                    </span>
+                
+                
+            </p>
+            
+                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%B5%8B%E8%AF%95%E7%90%86%E8%AE%BA/" rel="tag">测试理论</a></li></ul>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <p>冒烟测试和可用性测试都有自己的目标和执行的优先顺序。这两种类型的测试对于项目的成功起着关键的作用。对于新人来说，这两种类型通常会弄混淆。希望在本文结束时，可以对理智和烟雾测试有一个清晰的概念。</p>
+<p>冒烟测试是为了确保我们从开发团队收到的软件功能是否可测试。也称为“第0天”测试（先导测试），这是在“构建软件功能级别”完成的。</p>
+<p>如果对应的关键功能不起作用或关键错误尚未修复时，在不浪费测试时间的前提现，来简单地测试整个应用程序是有帮助的。在这里，我们关注的重点是主要和核心软件工作流程。</p>
+<h4 id="如何进行冒烟测试？"><a href="#如何进行冒烟测试？" class="headerlink" title="如何进行冒烟测试？"></a>如何进行冒烟测试？...</h4>
+            
+            <span class="read-more"><a href="/2019/11/05/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0%20(%E5%8D%81%E4%B8%83)%20%E5%86%92%E7%83%9F%E6%B5%8B%E8%AF%95VS%E5%8F%AF%E7%94%A8%E6%80%A7%E6%B5%8B%E8%AF%95/" title="查看全文" class="posttitle">查看全文</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
+    </div>
+</div>
+
+
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="javascript:;" target="_blank" rel="noopener"><b>「 </b>文章<b> 」</b></a>
+            
+            十一月 04, 2019
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/11/04/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0%20(%E5%8D%81%E5%85%AD)%20%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%20VS%20%E9%9B%86%E6%88%90%E6%B5%8B%E8%AF%95%20VS%20%E7%B3%BB%E7%BB%9F%E6%B5%8B%E8%AF%95/" title="软件测试笔记（十六）单元测试 VS 集成测试 VS 系统测试" class="posttitle">软件测试笔记（十六）单元测试 VS 集成测试 VS 系统测试</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>文章字数</i>
+                        2k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
+                        2 mins.
+                    </span>
+                
+                
+            </p>
+            
+                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%B5%8B%E8%AF%95%E7%90%86%E8%AE%BA/" rel="tag">测试理论</a></li></ul>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <p>之前介绍了集成测试《<a href="https://segmentfault.com/a/1190000020890154" target="_blank" rel="noopener">如何做到有效的集成测试？</a>》，后来有小伙伴私信问，能具体列举出单元测试 VS 集成测试 VS 系统测试之间的区别和应用场景。那么这次我们就把这个比较给补上。</p>
+<table>
+<thead>
+<tr>
+<th>单元测试</th>
+<th>集成测试</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>单元测试是软件测试中第一级测试</td>
+<td>集成测试是软件测试中第二级测试</td>
+</tr>
+<tr>
+<td>每一个组件都是一个单独测试的对象</td>
+<td>集成组件被视为单独测试的对象</td>
+</tr>
+<tr>
+<td>测试目标是确保单独的组件可以正常工作</td>
+<td>目的是测试多个单元模块的集成</td>
+</tr>
+<tr>
+<td>测试结果用来评价每一个被测组件</td>
+<td>它检查模块集成后，外部接口和系统的正常工作、接口是否...</td></tr></tbody></table>
+            
+            <span class="read-more"><a href="/2019/11/04/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0%20(%E5%8D%81%E5%85%AD)%20%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%20VS%20%E9%9B%86%E6%88%90%E6%B5%8B%E8%AF%95%20VS%20%E7%B3%BB%E7%BB%9F%E6%B5%8B%E8%AF%95/" title="查看全文" class="posttitle">查看全文</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
+    </div>
+</div>
+
+
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="javascript:;" target="_blank" rel="noopener"><b>「 </b>文章<b> 」</b></a>
+            
+            十一月 03, 2019
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/11/03/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0%20(%E5%8D%81%E4%BA%94)%20%E7%99%BD%E7%9B%92%E6%B5%8B%E8%AF%95%E5%92%8C%E9%BB%91%E7%9B%92%E6%B5%8B%E8%AF%95%E7%9A%84%E5%8C%BA%E5%88%AB/" title="软件测试笔记（十五）白盒测试和黑盒测试的区别" class="posttitle">软件测试笔记（十五）白盒测试和黑盒测试的区别</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>文章字数</i>
+                        2.4k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
+                        2 mins.
+                    </span>
+                
+                
+            </p>
+            
+                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%B5%8B%E8%AF%95%E7%90%86%E8%AE%BA/" rel="tag">测试理论</a></li></ul>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <p>前面我们聊过《<a href="https://segmentfault.com/a/1190000020895151" target="_blank" rel="noopener">软件测试笔记（十一）自动化测试和手动测试的选择</a>》，有些朋友和我聊到在测试里面还有类似的一些概念，比如白盒测试和黑盒测试。今天就大家分享下我对这两种测试的理解。</p>
+<p>它是根据软件需求和规范创建测试场景/案例，按照需求文档里面定义的行为及规范进行输入并且检查输出的测试。</p>
+<p>测试人员在不查看内部代码结构的情况下，评估被测软件的功能。它可以应用于软件测试的各个层次，如单元、集成、系统和验收测试。</p>
+<p>因为不查看源码，所以测试人员只对应用程序的功能部分执行测试，以确保软件的行为符合预期，所以是基于行为...</p>
+            
+            <span class="read-more"><a href="/2019/11/03/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0%20(%E5%8D%81%E4%BA%94)%20%E7%99%BD%E7%9B%92%E6%B5%8B%E8%AF%95%E5%92%8C%E9%BB%91%E7%9B%92%E6%B5%8B%E8%AF%95%E7%9A%84%E5%8C%BA%E5%88%AB/" title="查看全文" class="posttitle">查看全文</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
+    </div>
+</div>
+
+
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="javascript:;" target="_blank" rel="noopener"><b>「 </b>文章<b> 」</b></a>
+            
+            十一月 02, 2019
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/11/02/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0%20(%E5%8D%81%E5%9B%9B)%20%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E5%92%8C%E6%89%8B%E5%8A%A8%E6%B5%8B%E8%AF%95%E7%9A%84%E9%80%89%E6%8B%A9/" title="软件测试笔记（十四）回自动化测试和手动测试的选择" class="posttitle">软件测试笔记（十四）回自动化测试和手动测试的选择</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>文章字数</i>
+                        5.8k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
+                        5 mins.
+                    </span>
+                
+                
+            </p>
+            
+                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%B5%8B%E8%AF%95%E7%90%86%E8%AE%BA/" rel="tag">测试理论</a></li></ul>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <p>软件测试是为了评估软件应用程序的功能，以确定开发的软件是否满足指定的要求，并确定缺陷，以确保产品无缺陷，从而生产出高质量的产品。而软件测试分为手工测试和自动化测试两大类。手工测试和自动化测试都有各自的优点和缺点，而且我们知道项目都有很关键的要素：质量、成本和时间，任何项目的目标都是获得高质量的产出，同时控制完成项目所需的成本和时间，所以了解手工测试和自动化测试以及何时使用手工测试和何时使用自动化测试之间的区别是非常必要的。</p>
+<p></p>
+<p>对软件进行手工测试以发现缺陷的过程。测试人员是站在用户的视角，并确保所...</p>
+            
+            <span class="read-more"><a href="/2019/11/02/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0%20(%E5%8D%81%E5%9B%9B)%20%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E5%92%8C%E6%89%8B%E5%8A%A8%E6%B5%8B%E8%AF%95%E7%9A%84%E9%80%89%E6%8B%A9/" title="查看全文" class="posttitle">查看全文</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
+    </div>
+</div>
+
+
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="javascript:;" target="_blank" rel="noopener"><b>「 </b>文章<b> 」</b></a>
+            
+            十一月 01, 2019
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/11/01/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0%20(%E5%8D%81%E4%B8%89)%20%E5%9B%9E%E5%BD%92%E6%B5%8B%E8%AF%95%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%92%8C%E5%B7%A5%E5%85%B7%E9%80%89%E6%8B%A9/" title="软件测试笔记（十三）回归测试的介绍和工具选择" class="posttitle">软件测试笔记（十三）回归测试的介绍和工具选择</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>文章字数</i>
+                        4.9k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
+                        4 mins.
+                    </span>
+                
+                
+            </p>
+            
+                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%B5%8B%E8%AF%95%E7%90%86%E8%AE%BA/" rel="tag">测试理论</a></li></ul>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <p>在测试阶段，在每次迭代的时候，我们需要回归检验下前期完成的功能，来保证新的提交没有导致系统功能的衰退。所以回归测试在整个测试的生命周期中起到了非常重要的作用。</p>
+<p>在新功能发布后，对已经测试的程序功能进行重复测试，以发现由于正在测试的软件或其他相关或不相关的软件组件的更改而引入或发现的任何缺陷。</p>
+<p>简单地说，我们通过对新发布后的应用程序功能重新执行测试来进行回归，以评估修改后的代码是否破坏了先前工作的任何东西。每当我们修改应用程序时，我们都应该进行回归测试。</p>
+<p>回归测试使开发人员确信，在修改生产代码之后...</p>
+            
+            <span class="read-more"><a href="/2019/11/01/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0%20(%E5%8D%81%E4%B8%89)%20%E5%9B%9E%E5%BD%92%E6%B5%8B%E8%AF%95%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%92%8C%E5%B7%A5%E5%85%B7%E9%80%89%E6%8B%A9/" title="查看全文" class="posttitle">查看全文</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
+    </div>
+</div>
+
+
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="javascript:;" target="_blank" rel="noopener"><b>「 </b>文章<b> 」</b></a>
+            
+            十月 31, 2019
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/10/31/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0%20(%E5%8D%81%E4%BA%8C)%20%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%92%8C%E5%B7%A5%E5%85%B7%E9%80%89%E6%8B%A9/" title="软件测试笔记（十二）功能测试的介绍和工具选择" class="posttitle">软件测试笔记（十二）功能测试的介绍和工具选择</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>文章字数</i>
+                        5.8k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
+                        5 mins.
+                    </span>
+                
+                
+            </p>
+            
+                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%B5%8B%E8%AF%95%E7%90%86%E8%AE%BA/" rel="tag">测试理论</a></li></ul>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <p>在上一次分享中，我们介绍了《<a href="https://segmentfault.com/a/1190000020909527" target="_blank" rel="noopener">软件测试笔记（十三）单元测试的介绍和工具选择</a>》。今天我会介绍作为测试的重点之一的功能测试，因为关于功能测试是和软件的具体功能紧密结合的，所以这里会基本介绍下功能测试和市面上常用的功能测试的工具。</p>
+<p>功能测试简单来说就是验证软件的每一个功能是否按照需求文档中的规定运行，通过输入适当的输入来测试功能，以验证实际输出是够与预期的输出匹配。它属于黑盒测试的范围，测试人员可以不需要关心功能内部如何实现。</p>
+<p>下面列举了一些重要的功能测试的类型：</p>
+<p></p>
+<ul>
+<li>单元测试：为了检查源代码的单个单元...</li></ul>
+            
+            <span class="read-more"><a href="/2019/10/31/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0%20(%E5%8D%81%E4%BA%8C)%20%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%92%8C%E5%B7%A5%E5%85%B7%E9%80%89%E6%8B%A9/" title="查看全文" class="posttitle">查看全文</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
+    </div>
+</div>
+
+
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="javascript:;" target="_blank" rel="noopener"><b>「 </b>文章<b> 」</b></a>
+            
+            十月 30, 2019
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/10/30/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0%20(%E5%8D%81%E4%B8%80)%20%E9%9B%86%E6%88%90%E6%B5%8B%E8%AF%95/" title="软件测试笔记（十一）如何做到有效的集成测试？" class="posttitle">软件测试笔记（十一）如何做到有效的集成测试？</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>文章字数</i>
+                        3.9k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
+                        4 mins.
+                    </span>
+                
+                
+            </p>
+            
+                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%B5%8B%E8%AF%95%E7%90%86%E8%AE%BA/" rel="tag">测试理论</a></li></ul>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <p>软件产品的构成都是非常复杂的，这也就意味着它将含有多个模块，这些模块通过接口进行交互。针对于这些集成模块的测试，我们称之为集成测试。也可以认为它是由单元测试扩展出来的。</p>
+<p>集成测试是测试单元模块之间的连接或数据传输的过程。它又称为I&amp;T（集成与测试）。</p>
+<p>它分为大爆炸法、自上而下法、自下而上法和三明治或混合集成法（自上而下和自下而上相结合）。这个过程是通过使用名为stub和Drivers的虚拟程序来执行，其不需要实现软件整个模块，而只是模拟与调用模块的数据通信即可。</p>
+<p>它通常是在单元测试之后完...</p>
+            
+            <span class="read-more"><a href="/2019/10/30/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0%20(%E5%8D%81%E4%B8%80)%20%E9%9B%86%E6%88%90%E6%B5%8B%E8%AF%95/" title="查看全文" class="posttitle">查看全文</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
+    </div>
+</div>
+
+
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="javascript:;" target="_blank" rel="noopener"><b>「 </b>文章<b> 」</b></a>
+            
+            十月 29, 2019
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/10/29/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0%20(%E5%8D%81)%20%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%92%8C%E5%B7%A5%E5%85%B7%E9%80%89%E6%8B%A9/" title="软件测试笔记（十）单元测试的介绍和工具选择" class="posttitle">软件测试笔记（十）单元测试的介绍和工具选择</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>文章字数</i>
+                        4.9k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
+                        4 mins.
+                    </span>
+                
+                
+            </p>
+            
+                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%B5%8B%E8%AF%95%E7%90%86%E8%AE%BA/" rel="tag">测试理论</a></li></ul>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <p>单元测试通常是作为软件测试中基础的测试类型，用于测试单独的模块是否可以正常工作。它于功能测试不同，它更加关注的是代码内部的逻辑，而非是用户的需求。</p>
+<p>前面粗略了介绍了单元测试的定义，详细的解释是：单元测试也称为模块测试或组件测试。在软件开发过程中，检查软件的单个单元或模块是否正常工作，它是由开发人员在开发人员的环境中完成的。</p>
+<p></p>
+<p>软件测试通常划分为四个层次，每个层次都会去验证软件产品的功能，质量和性能指标。它们是：单元测试，集成测试，系统测试和验收测试。</p>
+<ul>
+<li>隔离代码的每个部分。</li>
+<li>确保单个模块功能正确...</li></ul>
+            
+            <span class="read-more"><a href="/2019/10/29/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0%20(%E5%8D%81)%20%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%92%8C%E5%B7%A5%E5%85%B7%E9%80%89%E6%8B%A9/" title="查看全文" class="posttitle">查看全文</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
+    </div>
+</div>
+
+
+    </div>
+    
+    <div id="pager"><a href="/tags/%E6%B5%8B%E8%AF%95%E7%90%86%E8%AE%BA/page/2/" class="more" data-loading="加载中..." data-load-more="加载更多">加载更多</a></div>
+    
+</div>
+<div id="preview"></div>
+
+
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2019
+        <span class="gradient-text">
+            xingyichuan
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.3" target="_blank" rel="noopener">v1.4.3</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+    <script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+
+
+
+    <script src="/js/busuanzi.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            if ($('span[id^="busuanzi_"]').length) {
+                initialBusuanzi();
+            }
+        });
+    </script>
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="//www.googletagmanager.com/gtag/js?id=xxxx"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'xxxx');
+    </script>
+
+
+
+
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["记录和分享生活中的快乐和成长！", "聊聊软件测试，分享学习的新知识，充实自己的生活！"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
+
+
+
+
+</html>

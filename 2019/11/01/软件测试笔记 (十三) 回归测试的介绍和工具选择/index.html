@@ -1,0 +1,458 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>软件测试笔记（十三）回归测试的介绍和工具选择 - 摸着石头过河</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Test Automation Autodesk Inventor API iLogic Forge,"> 
+    <meta name="description" content="聊聊软件测试，分享学习的新知识，充实自己的生活！,前言在测试阶段，在每次迭代的时候，我们需要回归检验下前期完成的功能，来保证新的提交没有导致系统功能的衰退。所以回归测试在整个测试的生命周期中起到了非常重要的作用。
+回归测试的定义在新功能发布后，对已,"> 
+    <meta name="author" content="xingyichuan"> 
+    <link rel="alternative" href="atom.xml" title="摸着石头过河" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+    <link rel="stylesheet" href="/css/obsidian.css">
+    <link rel="stylesheet" href="/css/ball-atom.min.css">
+</head>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">摸着石头过河</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="https://xingyichuan.github.io">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">软件测试笔记（十三）回归测试的介绍和工具选择</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" target="_blank" rel="noopener" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg);">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="javascript:;" target="_blank" rel="noopener"><b>「 </b>文章<b> 」</b></a>
+                
+                十一月 01, 2019
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/11/01/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0%20(%E5%8D%81%E4%B8%89)%20%E5%9B%9E%E5%BD%92%E6%B5%8B%E8%AF%95%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%92%8C%E5%B7%A5%E5%85%B7%E9%80%89%E6%8B%A9/" title="软件测试笔记（十三）回归测试的介绍和工具选择" class="">软件测试笔记（十三）回归测试的介绍和工具选择</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>文章字数</i>
+                    4.9k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
+                    4 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>阅读次数</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%B5%8B%E8%AF%95%E7%90%86%E8%AE%BA/" rel="tag">测试理论</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在测试阶段，在每次迭代的时候，我们需要回归检验下前期完成的功能，来保证新的提交没有导致系统功能的衰退。所以回归测试在整个测试的生命周期中起到了非常重要的作用。</p>
+<h2 id="回归测试的定义"><a href="#回归测试的定义" class="headerlink" title="回归测试的定义"></a>回归测试的定义</h2><p>在新功能发布后，对已经测试的程序功能进行重复测试，以发现由于正在测试的软件或其他相关或不相关的软件组件的更改而引入或发现的任何缺陷。</p>
+<p>简单地说，我们通过对新发布后的应用程序功能重新执行测试来进行回归，以评估修改后的代码是否破坏了先前工作的任何东西。每当我们修改应用程序时，我们都应该进行回归测试。</p>
+<p>回归测试使开发人员确信，在修改生产代码之后，没有任何功能被破坏。它确保没有意外的副作用。</p>
+<h2 id="何时去做回归测试？"><a href="#何时去做回归测试？" class="headerlink" title="何时去做回归测试？"></a>何时去做回归测试？</h2><p>当生产代码被修改时，我们都会进行软件回归测试。通常，我们在以下情况下执行回归测试：</p>
+<ol>
+<li>当新功能添加到应用程序时。示例：一个网站有一个登录功能，允许用户只使用电子邮件登录。现在，新功能看起来像是“提供了一个新功能，可以使用微信登录”。</li>
+<li>当有变更需求时。示例：从之前可用的登录页中删除“记住密码”。</li>
+<li>当有缺陷修复时。示例：假设登录按钮在登录页面中不起作用，测试人员报告缺陷，指出登录按钮已损坏。一旦开发人员修复了这个缺陷，测试人员就会测试它，以确保登录按钮是否按照预期的结果工作。同时测试人员回归测试与登录按钮相关的其他功能。</li>
+<li>当出现性能问题修复时。示例：加载主页需要5秒钟将加载时间缩短到2秒，我们需要保证主页相关的回归测试都能正常通过。</li>
+<li>当环境发生变化时。示例：将数据库从MySQL更新为Oracle。</li>
+<li>当有代码重构的时。</li>
+</ol>
+<p>我们已经了解了什么是回归，什么时候做回归。现在让我们看看怎么做。</p>
+<h2 id="回归测试如何做？"><a href="#回归测试如何做？" class="headerlink" title="回归测试如何做？"></a>回归测试如何做？</h2><p>回归测试通常非常繁琐和耗时。我们在每次部署后都会进行回归，因此自动化测试用例比每次手动运行测试用例更容易。如果我们有数千个测试用例，那么最好为我们在每个构建上集成所做的自动化测试脚本(回归测试)。</p>
+<p>自动化回归测试是最佳实践，可以节省大量时间并在夜间运行构建。</p>
+<h3 id="回归测试的工具"><a href="#回归测试的工具" class="headerlink" title="回归测试的工具"></a>回归测试的工具</h3><h4 id="Ranorex-付费-："><a href="#Ranorex-付费-：" class="headerlink" title="Ranorex(付费)："></a><a href="https://www.ranorex.com/" target="_blank" rel="noopener">Ranorex</a>(付费)：</h4><p>Ranorex Studio是一个集桌面、移动和web于一体的自动化测试工具，受到全球4000多家公司的信赖该应用程序提供了无代码测试自动化，使初学者能够直接测试，以及一个完整的IDE。</p>
+<pre><code>特点：
+
+1.  可靠的对象标识，即使对于具有动态id的web元素也是如此。
+2.  可共享对象存储库。
+3.  使用可重用代码模块减少测试维护。
+4.  跨平台和跨浏览器测试。
+5.  使用内置的Selenium WebDriver在Selenium Grid上并行测试或分发。
+6.  可定制，易于阅读的测试报告。
+7.  启用视频报告以查看在不重新运行测试的情况下导致测试失败的原因。
+8.  与完整的测试工具链集成：Azure DevOps、Jira、Jenkins、TestRail、Git等等。</code></pre><h4 id="Selenium（开源）"><a href="#Selenium（开源）" class="headerlink" title="Selenium（开源）:"></a><a href="http://www.seleniumhq.org/" target="_blank" rel="noopener">Selenium</a>（开源）:</h4><p>Selenium可能是Web应用程序最流行的开源测试自动化框架。Selenium起源于2000年代，经过十多年的发展，已经成为Web自动化测试人员的首选自动化框架。Selenium已经成为Katalon Studio、Watir、dragor和Robot framework等其他开源测试自动化工具的核心框架。</p>
+<p>Selenium支持多种系统环境（Windows、Mac、Linux）和浏览器（Chrome、Firefox、IE和Headless浏览器）它的脚本可以用各种编程语言编写，如Java、Groovy、Python、C#、PHP、Ruby和Perl。虽然对测试人员具有灵活性，他们可以编写复杂的测试脚本，以满足不同级别的复杂性，但它需要提高编程技巧和努力来构建自动化框架和库以满足特定测试需求。</p>
+<h4 id="UFT-付费-："><a href="#UFT-付费-：" class="headerlink" title="UFT(付费)："></a><a href="https://software.microfocus.com/fr-ca/software/uft" target="_blank" rel="noopener">UFT</a>(付费)：</h4><p>UFT（Unified Functional Testing）是著名的商业功能测试工具。它为跨平台的桌面、web和移动应用程序的API、web服务和GUI测试提供了全面的功能集。该工具具有先进的基于图像的对象识别功能、可重用的测试组件和自动化文档。</p>
+<p>UFT使用Visual Basic脚本编写测试过程和对象控制。UFT与业务流程测试和质量中心集成，该工具通过与诸如Jenkins之类的CI工具集成来支持CI。</p>
+<h4 id="Sahi-Pro-付费-："><a href="#Sahi-Pro-付费-：" class="headerlink" title="Sahi Pro(付费)："></a><a href="http://sahipro.com/" target="_blank" rel="noopener">Sahi Pro</a>(付费)：</h4><p>(付费)：<br>Sahi Pro帮助自动化web应用程序的功能测试Sahi Pro默认支持web应用程序和REST API自动化。Sahi Pro非常适合对具有大量AJAX和动态内容的复杂web 2.0应用程序进行跨浏览器/多浏览器测试。Sahi Pro运行在任何支持javascript的现代浏览器上它支持您测试web浏览器、桌面和移动应用程序它是一个面向测试人员的自动化回归测试工具。</p>
+<pre><code>特点：
+
+1.  内置的Excel框架，让您的业务分析师和非技术专业人士有助于测试。
+2.  简单而强大的api
+3.  对象获取器和记录器
+4.  自动记录和报告
+5.  并行和分布式回放
+6.  持续集成
+7.  在任何操作系统上测试任何浏览器
+8.  测试任何Windows桌面应用程序
+9.  测试任何iOS和Android、本机和混合应用程序</code></pre><h4 id="TestComplete-付费-："><a href="#TestComplete-付费-：" class="headerlink" title="TestComplete(付费)："></a><a href="https://smartbear.com/" target="_blank" rel="noopener">TestComplete</a>(付费)：</h4><p>由SmartBear完成的TestComplete是一个强大的商业测试工具，用于web、移动和桌面测试。它支持各种脚本语言，如JavaScript、VBScript、Python和C++脚本。与Katalon Studio一样，测试人员可以使用TestComplete执行关键字驱动和数据驱动的测试，该工具还提供了一个易于使用的录制和回放功能。</p>
+<p>与UTF一样，TestComplete的GUI对象识别功能可以自动检测和更新UI对象，这有助于减少在AUT更改时维护测试脚本的工作量在CI过程中，它还与Jenkins集成。</p>
+<h4 id="Watir（开源）："><a href="#Watir（开源）：" class="headerlink" title="Watir（开源）："></a><a href="http://watir.com/" target="_blank" rel="noopener">Watir</a>（开源）：</h4><p>Watir是一个基于Ruby库的web自动化测试的开源测试工具。Watir支持跨浏览器测试，包括Firefox、Opera、headless browser和IE。它还支持数据驱动测试，并与诸如RSpec、Cucumber和Test/Unit等BBD工具集成。</p>
+<h4 id="IBM-Rational-Functional-Tester-付费-："><a href="#IBM-Rational-Functional-Tester-付费-：" class="headerlink" title="IBM Rational Functional Tester(付费)："></a><a href="https://www.ibm.com/" target="_blank" rel="noopener">IBM Rational Functional Tester</a>(付费)：</h4><p>IBM RFT是一个用于功能和回归测试的数据驱动测试平台。它支持很多的应用程序，如.Net、Java、SAP、Flex和Ajax。RFT使用Visual Basic.Net和Java作为脚本语言。用户对AUT的操作，通过应用程序屏幕截图以脚本格式记录。</p>
+<p>RFT的另一个有趣的特性是它与IBM Jazz应用程序生命周期管理系统（如ibmrationalteamconcert和Rational Quality Manager）的集成。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这里我们聊了什么是回归测试，回归测试切入的时间点，以及如何才能高效的去执行我们的回归测试以及一些基本的回归测试的工具。希望可以对大家有所帮助，如果大家对于回归测试有什么好的测试想法和测试工具的推荐，请在留言区回复。</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="true">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/bgm.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='f3b100844fbc40ee28bb'
+        data-cs='58719992b9ecb2f8c085f5f8c21e538911de5624'
+        data-r='xingyichuan.github.io'
+        data-o='xingyichuan'
+        data-a='xingyichuan'
+        data-d=''
+    >留言</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="/img/avatar.png" height=300 width=300></img>
+                    <p>xingyichuan</p>
+                    <span>记录和分享生活中的快乐和成长！</span>
+                    <dl>
+                        <dd><a href="https://xingyichuan.github.io/" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">20 <p>文章</p></a></li>
+                    <li><a href="/categories">2 <p>分类</p></a></li>
+                    <li><a href="/tags">3 <p>标签</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>目录</h4>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#回归测试的定义"><span class="toc-number">2.</span> <span class="toc-text">回归测试的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#何时去做回归测试？"><span class="toc-number">3.</span> <span class="toc-text">何时去做回归测试？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#回归测试如何做？"><span class="toc-number">4.</span> <span class="toc-text">回归测试如何做？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#回归测试的工具"><span class="toc-number">4.1.</span> <span class="toc-text">回归测试的工具</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2019
+        <span class="gradient-text">
+            xingyichuan
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.3" target="_blank" rel="noopener">v1.4.3</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+    <script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+
+
+
+    <script src="/js/busuanzi.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            if ($('span[id^="busuanzi_"]').length) {
+                initialBusuanzi();
+            }
+        });
+    </script>
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="//www.googletagmanager.com/gtag/js?id=xxxx"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'xxxx');
+    </script>
+
+
+
+
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["记录和分享生活中的快乐和成长！", "聊聊软件测试，分享学习的新知识，充实自己的生活！"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
+
+
+
+
+</html>
