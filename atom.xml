@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xingyichuan.github.io/"/>
-  <updated>2019-12-25T13:28:52.117Z</updated>
+  <updated>2019-12-25T15:06:43.255Z</updated>
   <id>https://xingyichuan.github.io/</id>
   
   <author>
@@ -21,15 +21,15 @@
     <link href="https://xingyichuan.github.io/2019/12/25/Inventor%E7%AC%94%E8%AE%B0(%E4%B8%80)%E4%BB%80%E4%B9%88%E5%9C%BA%E6%99%AF%E9%80%82%E5%90%88iLogic/"/>
     <id>https://xingyichuan.github.io/2019/12/25/Inventor%E7%AC%94%E8%AE%B0(%E4%B8%80)%E4%BB%80%E4%B9%88%E5%9C%BA%E6%99%AF%E9%80%82%E5%90%88iLogic/</id>
     <published>2019-12-25T02:34:12.000Z</published>
-    <updated>2019-12-25T13:28:52.117Z</updated>
+    <updated>2019-12-25T15:06:43.255Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="什么是Inventor-iLogic"><a href="#什么是Inventor-iLogic" class="headerlink" title="什么是Inventor iLogic?"></a>什么是Inventor iLogic?</h2><p><img src="/2019/12/25/Inventor%E7%AC%94%E8%AE%B0(%E4%B8%80)%E4%BB%80%E4%B9%88%E5%9C%BA%E6%99%AF%E9%80%82%E5%90%88iLogic/autodesk-inventor.jpg" alt="demo"></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="什么是Inventor-iLogic"><a href="#什么是Inventor-iLogic" class="headerlink" title="什么是Inventor iLogic?"></a>什么是Inventor iLogic?</h2><p>简而言之，就是让设计自动化的一种方式，同Inventor API类似，不过以工程师更能接受的语法来帮助实现设计的标准化和自动化。</p><h2 id="Inventor-iLogic的特点"><a href="#Inventor-iLogic的特点" class="headerlink" title="Inventor iLogic的特点?"></a>Inventor iLogic的特点?</h2><ul><li>iLogic 函数<br>iLogic 函数是和Inventor的模型绑定在一起的，在保存Inventor的模型时候，iLogic 函数也随之会保存。<br>通过修改参数来调用对应的iLogic 函数，同时也可以讲计算结果返回给模型参数和自定义参数。</li></ul><ul><li>iLogic 中的 Automation 函数<br>对于没有编程经验的设计师和工程师都可以执行 iLogic 自动化函数，其种类有：</li></ul><ol><li>在部件规则中，修改子装备和零件的参数</li><li>在部件规则中，控制子装备和零件的可见性，是否抑制，约束等</li><li>读取模型的材料，外观，质量，体积等特性参数</li><li>实时更新BOM信息</li><li>根据规则需求，控制输入参数</li><li>读写EXCEL文档</li></ol><ul><li>使用 iLogic 规则创建的自定义界面<br>给用户提供了自定义界面来使用在模型中定义的iLogic 函数和Inventor 的参数</li></ul><ul><li>在 iLogic 规则集成的 VB.NET<br>iLogic 同样可以使用到 VB.NET的功能，包括：</li></ul><ol><li>读取和写入 HTML 文件、文本文件、Word 文档和其他格式的文件。 </li><li>启动外部应用程序和现有的 VBA 宏。 </li><li>加载DLL, 与其他 Windows 应用程序进行通信。 </li><li>连接到外部数据库应用程序，例如 Microsoft® Access 或 SQL Server。</li><li>直接使用 Inventor API 函数来扩充iLogic 的功能。</li></ol><ul><li>iLogic 中的参数<br>iLogic 中的参数有三种类型：</li></ul><ol><li><p>标准 Inventor 参数</p></li><li><p>真/假参数</p><pre><code class="vb">boolean1 = Trueboolean2 = False</code></pre></li><li><p>字符串参数</p><pre><code class="vb">string1 = &quot;Left Side&quot;</code></pre></li></ol><p>下面是使用字符串参数和真假参数结合Inventor 中的属性的一个案例</p><pre><code class="vb">iProperties.Value(&quot;Project&quot;,&quot;Description&quot;) = string1iProperties.Value(&quot;Custom&quot;,&quot;Passed&quot;) = boolean1string1 = iProperties.Value(&quot;Project&quot;,&quot;Description&quot;)boolean1 = iProperties.Value(&quot;Custom&quot;,&quot;Passed&quot;)</code></pre><ul><li>iLogic 中可以设置多值参数<br>提供一组数据可控选择。设置方式也很方便，在任意列中的自定义参数上单击鼠标右键，然后选择“生成多值”以指定该参数可以具有多个值。</li></ul><p>对于数值型参数，值列表可以包含分数或表达式。例如：<br>3/8<br>12.5 mm<br>d0 * 0.8<br>真/假</p><h2 id="Inventor-iLogic的适用场景？"><a href="#Inventor-iLogic的适用场景？" class="headerlink" title="Inventor iLogic的适用场景？"></a>Inventor iLogic的适用场景？</h2><ol><li><p>对于设计要求有着明确的设计规则和标准<br>如上面列举的iLogic的特性，我们可以方便的操作Inventor的模型，按照设计的规则和标准来控制Inventor模型的参数和装备方式，等。这样我们就可以不需要每次都去人工校验设计的准确性，而是将设计要求融入到iLogic的规则中去。</p></li><li><p>对于设计有自动化的要求<br>因为iLogic 就是针对于工程师的编程语言，那么通过预先定义好的类和方法，来实现自动化设计的需求。</p></li><li><p>需要结合其他的系统或者规则<br>因为iLogic中可以使用到DOTNET的类库，这就意味着我们可以方便的访问本地的文件资源，方便的链接到数据库和其他应用程序。</p></li></ol><p>大家如果在使用Inventor的过程中有关于上面的三点需求的话，那么iLogic就是一个比较好可以解决您需求的一个工具。</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;什么是Inventor-iLogic&quot;&gt;&lt;a href=&quot;#什么是Inventor-iLogic&quot; class=&quot;headerlink&quot; title=&quot;什么是Inventor iLogic?&quot;&gt;&lt;/a&gt;什么是Inventor iLogic?&lt;/h2&gt;&lt;p&gt;&lt;img
+        &lt;h2 id=&quot;什么是Inventor-iLogic&quot;&gt;&lt;a href=&quot;#什么是Inventor-iLogic&quot; class=&quot;headerlink&quot; title=&quot;什么是Inventor iLogic?&quot;&gt;&lt;/a&gt;什么是Inventor iLogic?&lt;/h2&gt;&lt;p&gt;简而言之
       
     
     </summary>
